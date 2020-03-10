@@ -4,7 +4,8 @@
   "description": "An interactive visualizer for learning and experimenting with CSS features.",
   "main": "server.js",
   "scripts": {
-    "start": "nodemon server/server.js"
+    "start": "nodemon server/server.js",
+    "build": "NODE_ENV=production webpack"
   },
   "author": "Zac Haluza",
   "license": "ISC",
