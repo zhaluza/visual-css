@@ -1,11 +1,29 @@
 const User = require('../models/userModel');
+const bcrypt = require('bcrypt');
 
 const userController = {};
 
 // Handle user signup
+userController.hashPassword = (req, res, next) => {
+  const { password } = req.body;
+
+  // Hash password
+  bcrypt.genSalt(5, (err, salt) => {
+    if (err) return next('Error occurred at genSalt');
+    bcrypt.hash(password, salt, (err, hash) => {
+      if (err) return next('Error occurred at hash');
+      hashedPassword = hash;
+      res.locals.hash = hash;
+      return next();
+    });
+  });
+};
+
 userController.createUser = (req, res, next) => {
-  const { username, email, password } = req.body;
-  User.create({ username, email, password }, (err, result) => {
+  const { username, email } = req.body;
+
+  // Create user
+  User.create({ username, email, password: res.locals.hash }, (err, result) => {
     if (err) return next('Error occurred at userController.createUser');
     res.locals.result = result;
     return next();

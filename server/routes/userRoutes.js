@@ -3,9 +3,14 @@ const userController = require('../controllers/userController');
 const router = express.Router();
 
 // Create new user
-router.post('/', userController.createUser, (req, res) => {
-  return res.status(200).send(res.locals.result);
-});
+router.post(
+  '/',
+  userController.hashPassword,
+  userController.createUser,
+  (req, res) => {
+    return res.status(200).send(res.locals.result);
+  }
+);
 
 // User signin
 router.get('/', userController.signIn, (req, res) => {
