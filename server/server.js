@@ -1,6 +1,7 @@
 const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
+const userRouter = require('./routes/userRoutes');
 
 const app = express();
 
@@ -11,8 +12,10 @@ app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 
 // Handle requests for client files
+app.use(express.static(path.resolve(__dirname, '../client')));
 
 // Define route handlers
+app.use('/users', userRouter);
 
 // Handle unknown route requests
 app.use((req, res) => res.sendStatus(404));
