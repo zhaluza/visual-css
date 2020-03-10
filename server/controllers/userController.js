@@ -36,4 +36,14 @@ userController.updateFavs = (req, res, next) => {
   );
 };
 
+// Delete user
+userController.deleteUser = (req, res, next) => {
+  const id = req.body;
+  User.findOneAndDelete({ id }, (err, result) => {
+    if (err) return next('Error occurred at userController.deleteUser');
+    res.locals.result = result;
+    return next();
+  });
+};
+
 module.exports = userController;

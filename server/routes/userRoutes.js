@@ -17,4 +17,9 @@ router.patch('/', userController.updateFavs, (req, res) => {
   return res.status(200).send(res.locals.result);
 });
 
+// Delete user
+router.delete('/', userController.deleteUser, (req, res) => {
+  return res.status(200).send(res.locals.result);
+});
+
 module.exports = router;
