@@ -1,13 +1,21 @@
 import React from 'react';
-import Sidebar from './Sidebar/index';
 import CodeContainer from './CodeContainer/index';
+import CSSImage from './CSSImage/index';
+import LoginButtons from './LoginButtons/LoginButtons';
+import Sidebar from './Sidebar/index';
+import SliderContainer from './SliderContainer/index';
 
 const App = () => {
   return (
     <div className="app">
       <Sidebar />
       <div className="content-container">
-        <CodeContainer />
+        <LoginButtons />
+        <CSSImage />
+        <div className="container-bottom">
+          <SliderContainer />
+          <CodeContainer />
+        </div>
       </div>
     </div>
   );
