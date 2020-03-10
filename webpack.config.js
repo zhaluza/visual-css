@@ -3,6 +3,7 @@ const path = require('path');
 module.exports = {
   mode: process.env.NODE_ENV,
   devServer: {
+    contentBase: path.resolve(__dirname, 'client'),
     publicPath: '/build/',
     proxy: {
       '/users': 'http://localhost:3000'
