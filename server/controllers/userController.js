@@ -35,3 +35,5 @@ userController.updateFavs = (req, res, next) => {
     }
   );
 };
+
+module.exports = userController;
