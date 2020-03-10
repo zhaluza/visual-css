@@ -21,3 +21,17 @@ userController.signIn = (req, res, next) => {
     return next();
   });
 };
+
+// Update user favorites
+userController.updateFavs = (req, res, next) => {
+  const { favorite, id } = req.body;
+  User.findOneAndUpdate(
+    { id },
+    { favorites: [...favorites, favorite] },
+    (err, result) => {
+      if (err) return next('Error occurred at userController.updateFavs');
+      res.locals.result = result;
+      return next();
+    }
+  );
+};
