@@ -1,27 +1,32 @@
 import * as types from '../constants/actionTypes';
 
 // Box Shadow
-export const handleXPosition = value => ({
+export const handleXPosition = event => ({
   type: types.HANDLE_X_POSITION,
-  payload: value
+  payload: event
 });
 
-export const handleYPosition = value => ({
+export const handleYPosition = event => ({
   type: types.HANDLE_Y_POSITION,
-  payload: value
+  payload: event
 });
 
-export const handleSpread = value => ({
+export const handleSpread = event => ({
   type: types.HANDLE_SPREAD,
-  payload: value
+  payload: event
 });
 
-export const handleBlur = value => ({
+export const handleBlur = event => ({
   type: types.HANDLE_BLUR,
-  payload: value
+  payload: event
 });
 
-export const toggleInset = toggle => ({
+export const handleOpacity = event => ({
+  type: types.HANDLE_OPACITY,
+  payload: event
+});
+
+export const toggleInset = event => ({
   type: types.TOGGLE_INSET,
-  payload: toggle
+  payload: event
 });

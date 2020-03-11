@@ -1,9 +1,7 @@
 import React from 'react';
-import CodeContainer from './CodeContainer/index';
-import CSSImage from './CSSImage/index';
-import LoginButtons from './LoginButtons/LoginButtons';
+import LoginButtons from './LoginButtons/index';
 import Sidebar from './Sidebar/index';
-import SliderContainer from './SliderContainer/index';
+import BoxShadowContainer from '../containers/BoxShadowContainer/index';
 
 // TODO: Refactor app to use React Router for different CSS settings
 
@@ -13,11 +11,7 @@ const App = () => {
       <Sidebar />
       <div className="content-container">
         <LoginButtons />
-        <CSSImage />
-        <div className="container-bottom">
-          <SliderContainer />
-          <CodeContainer />
-        </div>
+        <BoxShadowContainer />
       </div>
     </div>
   );

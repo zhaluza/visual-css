@@ -5,6 +5,7 @@ const initialState = {
   posY: 0,
   spread: 0,
   blur: 0,
+  opacity: 0.5,
   inset: false
 };
 
@@ -23,21 +24,27 @@ const boxShadowReducer = (state = initialState, action) => {
         ...state,
         posY
       };
-
-    case types.HANDLE_SPREAD:
-      const spread = action.payload;
-      return {
-        ...state,
-        spread
-      };
     case types.HANDLE_BLUR:
       const blur = action.payload;
       return {
         ...state,
         blur
       };
+    case types.HANDLE_SPREAD:
+      const spread = action.payload;
+      return {
+        ...state,
+        spread
+      };
+    case types.HANDLE_OPACITY:
+      const opacity = action.payload / 100;
+      return {
+        ...state,
+        opacity
+      };
     case types.TOGGLE_INSET:
       const inset = action.payload;
+
       return {
         ...state,
         inset
