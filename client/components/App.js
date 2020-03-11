@@ -7,6 +7,8 @@ import {
   Prompt
 } from 'react-router-dom';
 import LoginButtons from './LoginButtons/index';
+import { connect } from 'react-redux';
+import * as actions from '../actions/actions';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Sidebar from './Sidebar/index';
@@ -15,7 +17,16 @@ import BoxShadowContainer from '../containers/BoxShadowContainer/index';
 // TODO: Refactor app to use React Router for different CSS settings
 // TODO: Fix crash on signin/signup routes
 
-const App = () => {
+const mapStateToProps = state => {
+  user: state.user.user;
+};
+
+const mapDispatchToProps = dispatch => {
+  signIn: () => dispatch(actions.signIn());
+  signUp: () => dispatch(actions.signUp());
+};
+
+const App = props => {
   return (
     <Router>
       <div className="app">
@@ -31,10 +42,10 @@ const App = () => {
               <BoxShadowContainer />
             </Route>
             <Route exact path="/signin">
-              <SignIn />
+              <SignIn signIn={props.signIn} />
             </Route>
             <Route exact path="/signup">
-              <SignUp />
+              <SignUp signUp={props.signUp} />
             </Route>
           </Switch>
         </div>
@@ -43,4 +54,4 @@ const App = () => {
   );
 };
 
-export default App;
+export default connect(mapStateToProps, mapDispatchToProps)(App);
