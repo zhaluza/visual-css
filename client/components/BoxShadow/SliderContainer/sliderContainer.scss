@@ -1,5 +1,8 @@
+@import '../../../scss//styleVars';
+
 .slider-container {
   background: gray;
   width: 15rem;
   padding: 1rem;
+  border-radius: $border-radius;
 }

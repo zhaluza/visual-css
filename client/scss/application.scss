@@ -17,6 +17,14 @@ body {
   height: 100vh;
   display: flex;
 }
+
+nav {
+  align-self: flex-end;
+  margin: 1rem 0;
+  > * {
+    margin: 1rem;
+  }
+}
 .content-container {
   display: flex;
   flex-direction: column;
