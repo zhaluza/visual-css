@@ -1,6 +1,8 @@
 import React from 'react';
 import './sliderContainer.scss';
 
+// TODO: add color picking option
+
 const SliderContainer = props => {
   return (
     <div className="slider-container">
