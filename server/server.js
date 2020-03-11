@@ -17,14 +17,14 @@ app.use(express.static(path.resolve(__dirname, '../client')));
 // Define route handlers
 app.use('/users', userRouter);
 
-// TODO: Global error handler
-
 if (process.env.NODE_ENV === 'production') {
   app.use('/build', express.static(path.join(__dirname, '../build')));
   app.get('/', (req, res) => {
     res.sendFile(path.join(__dirname, '../index.html'));
   });
 }
+
+// TODO: Global error handler
 
 // Handle unknown route requests
 app.use((req, res) => res.sendStatus(404));

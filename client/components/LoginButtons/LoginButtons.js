@@ -1,7 +1,12 @@
 import React from 'react';
-import { render } from 'react-dom';
+import './loginButtons.scss';
 
 const LoginButtons = props => {
-  return <h1>Login Buttons</h1>;
+  return (
+    <div className="buttons">
+      <button className="btn">Log In</button>
+      <button className="btn">Sign Up</button>
+    </div>
+  );
 };
 export default LoginButtons;

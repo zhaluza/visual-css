@@ -1,0 +1,10 @@
+@import '_styleVars';
+
+.btn {
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border: none;
+  border-radius: $border-radius;
+  cursor: pointer;
+  font-family: 'Nunito Sans', sans-serif;
+}

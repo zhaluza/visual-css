@@ -1,7 +1,12 @@
-import React from 'react';
+import React, { Fragment } from 'react';
+import './cssImage.scss';
 
 const CSSImage = props => {
-  return <h1>CSS Image here</h1>;
+  return (
+    <Fragment>
+      <div className="square"></div>
+    </Fragment>
+  );
 };
 
 export default CSSImage;

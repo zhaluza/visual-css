@@ -1,7 +1,12 @@
 import React from 'react';
+import './codeContainer.scss';
 
 const CodeContainer = props => {
-  return <h1>Code Container</h1>;
+  return (
+    <div className="code-container">
+      <code>Code goes here</code>
+    </div>
+  );
 };
 
 export default CodeContainer;
