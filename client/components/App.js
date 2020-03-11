@@ -13,6 +13,7 @@ import Sidebar from './Sidebar/index';
 import BoxShadowContainer from '../containers/BoxShadowContainer/index';
 
 // TODO: Refactor app to use React Router for different CSS settings
+// TODO: Fix crash on signin/signup routes
 
 const App = () => {
   return (
