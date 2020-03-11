@@ -6,7 +6,7 @@ import store from './store';
 import styles from '../client/scss/application.scss';
 
 render(
-  <Provider>
+  <Provider store={store}>
     <App />
   </Provider>,
 
