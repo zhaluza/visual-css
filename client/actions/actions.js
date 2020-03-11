@@ -30,3 +30,7 @@ export const toggleInset = event => ({
   type: types.TOGGLE_INSET,
   payload: event
 });
+
+export const handleReset = () => ({
+  type: types.HANDLE_RESET
+});

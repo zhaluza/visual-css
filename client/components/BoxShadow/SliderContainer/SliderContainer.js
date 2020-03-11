@@ -11,6 +11,7 @@ const SliderContainer = props => {
     handleSpread,
     handleBlur,
     handleOpacity,
+    handleReset,
     toggleInset
   } = props;
 
@@ -81,8 +82,13 @@ const SliderContainer = props => {
         <p>{opacity}</p>
       </div>
 
-      <label>Toggle Inset</label>
-      <input type="checkbox" value={inset} onChange={toggleInset} />
+      <div className="toggle-div">
+        <label>Toggle Inset</label>
+        <input type="checkbox" value={inset} onChange={toggleInset} />
+      </div>
+      <button onClick={handleReset} className="btn">
+        Reset
+      </button>
     </div>
   );
 };

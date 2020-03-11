@@ -22,7 +22,8 @@ const mapDispatchToProps = dispatch => ({
   handleSpread: event => dispatch(actions.handleSpread(event.target.value)),
   handleBlur: event => dispatch(actions.handleBlur(event.target.value)),
   handleOpacity: event => dispatch(actions.handleOpacity(event.target.value)),
-  toggleInset: event => dispatch(actions.toggleInset(event.target.checked))
+  toggleInset: event => dispatch(actions.toggleInset(event.target.checked)),
+  handleReset: () => dispatch(actions.handleReset())
 });
 
 const BoxShadowContainer = props => {
@@ -44,6 +45,7 @@ const BoxShadowContainer = props => {
           handleBlur={props.handleBlur}
           handleOpacity={props.handleOpacity}
           toggleInset={props.toggleInset}
+          handleReset={props.handleReset}
           posX={props.posX}
           posY={props.posY}
           spread={props.spread}

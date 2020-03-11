@@ -1,11 +1,11 @@
 import * as types from '../constants/actionTypes';
 
 const initialState = {
-  posX: 0,
-  posY: 0,
-  spread: 0,
-  blur: 0,
-  opacity: 0.5,
+  posX: 5,
+  posY: 5,
+  spread: 5,
+  blur: 5,
+  opacity: 0.2,
   inset: false
 };
 
@@ -49,6 +49,8 @@ const boxShadowReducer = (state = initialState, action) => {
         ...state,
         inset
       };
+    case types.HANDLE_RESET:
+      return initialState;
     default:
       return state;
   }

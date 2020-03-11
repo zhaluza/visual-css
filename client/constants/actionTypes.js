@@ -5,3 +5,4 @@ export const HANDLE_BLUR = 'HANDLE_BLUR';
 export const HANDLE_SPREAD = 'HANDLE_SPREAD';
 export const HANDLE_OPACITY = 'HANDLE_OPACITY';
 export const TOGGLE_INSET = 'TOGGLE_INSET';
+export const HANDLE_RESET = 'HANDLE_RESET';
