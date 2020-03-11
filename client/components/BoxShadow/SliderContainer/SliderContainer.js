@@ -18,7 +18,7 @@ const SliderContainer = props => {
   return (
     <div className="slider-container">
       <div className="slider-div">
-        <p>Position X</p>
+        <p>Position X: {posX}px</p>
         <input
           type="range"
           min="-200"
@@ -27,11 +27,10 @@ const SliderContainer = props => {
           onChange={handleXPosition}
           className="slider"
         />
-        <p>{posX}px</p>
       </div>
 
       <div className="slider-div">
-        <p>Position Y</p>
+        <p>Position Y: {posY}px</p>
         <input
           type="range"
           min="-200"
@@ -40,11 +39,10 @@ const SliderContainer = props => {
           onChange={handleYPosition}
           className="slider"
         />
-        <p>{posY}px</p>
       </div>
 
       <div className="slider-div">
-        <p>Blur</p>
+        <p>Blur: {blur}px</p>
         <input
           type="range"
           min="0"
@@ -53,11 +51,10 @@ const SliderContainer = props => {
           onChange={handleBlur}
           className="slider"
         />
-        <p>{blur}px</p>
       </div>
 
       <div className="slider-div">
-        <p>Spread</p>
+        <p>Spread: {spread}px</p>
         <input
           type="range"
           min="0"
@@ -66,11 +63,10 @@ const SliderContainer = props => {
           onChange={handleSpread}
           className="slider"
         />
-        <p>{spread}px</p>
       </div>
 
       <div className="slider-div">
-        <p>Opacity</p>
+        <p>Opacity: {Math.floor(opacity * 100)}%</p>
         <input
           type="range"
           min="0"
@@ -79,7 +75,6 @@ const SliderContainer = props => {
           onChange={handleOpacity}
           className="slider"
         />
-        <p>{opacity}</p>
       </div>
 
       <div className="toggle-div">
