@@ -1,6 +1,13 @@
-import React from 'react';
+import React, { Fragment } from 'react';
 
 const SignUp = props => {
-  return <h1>Sign up!</h1>;
+  return (
+    <Fragment>
+      <h1>Sign Up</h1>
+      <form>
+        <input type="text" placeholder="username" />
+      </form>
+    </Fragment>
+  );
 };
 export default SignUp;

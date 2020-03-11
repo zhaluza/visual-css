@@ -5,6 +5,7 @@ module.exports = {
   devServer: {
     contentBase: path.resolve(__dirname, 'client'),
     publicPath: '/build/',
+    historyApiFallback: true,
     proxy: {
       '/users': 'http://localhost:3000'
     }

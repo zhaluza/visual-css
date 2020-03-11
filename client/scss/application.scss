@@ -23,12 +23,13 @@ nav {
   margin: 1rem 0;
   > * {
     margin: 1rem;
+    text-decoration: none;
+    color: rgb(255, 87, 87);
   }
 }
 .content-container {
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
   align-items: center;
   width: 100vw;
 }
