@@ -35,6 +35,7 @@ const CodeContainer = props => {
         <button className="btn" onClick={copyCodeToClipboard}>
           Copy Code
         </button>
+        <button className="btn">Add to Favorites</button>
         {copied && <p>{message}</p>}
       </div>
     </div>
