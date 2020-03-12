@@ -16,6 +16,7 @@ import BoxShadowContainer from '../containers/BoxShadowContainer/index';
 
 // TODO: Refactor app to use React Router for different CSS settings
 // TODO: Fix crash on signin/signup routes
+// TODO: Add favorites list
 
 const mapStateToProps = state => ({
   user: state.userInfo.user,
