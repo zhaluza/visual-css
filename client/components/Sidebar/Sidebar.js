@@ -4,7 +4,8 @@ import './sidebar.scss';
 const Sidebar = props => {
   return (
     <div className="sidebar">
-      <h2>Choose a CSS Setting</h2>
+      <h2>Visual CSS</h2>
+      <p>Choose a CSS setting and experiment.</p>
       <button className="btn">Box Shadow</button>
     </div>
   );

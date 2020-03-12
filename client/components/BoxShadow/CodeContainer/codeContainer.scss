@@ -9,8 +9,12 @@
   overflow: scroll;
   border-radius: $border-radius;
 
-  code {
+  textarea {
     color: $code-green;
+    background: rgb(26, 26, 26);
+    width: 100%;
+    font-size: 1rem;
+    height: 5rem;
   }
   .code-buttons {
     margin-top: 1rem;
