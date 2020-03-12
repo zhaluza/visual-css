@@ -1,5 +1,6 @@
+@import '../../scss/colors';
 .sidebar {
-  background-color: rgb(204, 204, 204);
+  background-color: $soft-sidebar;
   width: 15rem;
   padding: 1rem;
 }

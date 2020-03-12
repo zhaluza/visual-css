@@ -10,7 +10,7 @@ const CodeContainer = props => {
   return (
     <div className="code-container">
       <code>{inset ? insetCodeString : codeString}</code>
-      <div className="buttons">
+      <div className="code-buttons">
         <button className="btn">Copy Code</button>
         <button className="btn">Add to Favorites</button>
       </div>

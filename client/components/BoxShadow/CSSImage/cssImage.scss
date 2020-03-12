@@ -1,8 +1,10 @@
+@import '../../../scss/colors';
+
 $size: 200px;
 
 .square {
   width: $size;
   height: $size;
-  background-color: orangered;
+  background-color: $box-color;
   border-radius: 5px;
 }
