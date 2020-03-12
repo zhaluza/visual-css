@@ -11,7 +11,6 @@ export function signIn(userInfo) {
         body: JSON.stringify(userInfo)
       }
     })
-      .then(handleErrors)
       .then(res => res.json())
       .then(json => {
         dispatch(signInSuccess(json));
@@ -23,17 +22,18 @@ export function signIn(userInfo) {
 
 export function signUp(userInfo) {
   return dispatch => {
-    dispatch(signUpBegin);
+    dispatch(signUpBegin(userInfo));
     return fetch('/users', {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        body: JSON.stringify(userInfo)
-      }
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userInfo)
     })
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
+        console.log(json);
         dispatch(signUpSuccess(json));
         return json;
       })
@@ -73,6 +73,34 @@ export const signUpFailure = error => ({
   type: types.SIGN_UP_FAILURE,
   payload: error
 });
+
+export const handleSignUpUsername = text => ({
+  type: types.HANDLE_SU_USERNAME,
+  payload: text
+});
+export const handleSignUpEmail = text => ({
+  type: types.HANDLE_SU_EMAIL,
+  payload: text
+});
+export const handleSignUpPassword = text => ({
+  type: types.HANDLE_SU_PASSWORD,
+  payload: text
+});
+
+export const handleSignInUsername = text => ({
+  type: types.HANDLE_SI_USERNAME,
+  payload: text
+});
+export const handleSignInEmail = text => ({
+  type: types.HANDLE_SI_EMAIL,
+  payload: text
+});
+export const handleSignInPassword = text => ({
+  type: types.HANDLE_SI_PASSWORD,
+  payload: text
+});
+
+export const logOut = () => ({ type: types.LOG_OUT });
 
 // BOX SHADOW ACTIONS
 export const handleXPosition = event => ({

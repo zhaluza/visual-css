@@ -4,7 +4,7 @@ import userReducer from './userReducer';
 
 const reducers = combineReducers({
   boxShadow: boxShadowReducer,
-  user: userReducer
+  userInfo: userReducer
 });
 
 export default reducers;

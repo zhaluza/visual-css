@@ -79,7 +79,7 @@ const SliderContainer = props => {
 
       <div className="toggle-div">
         <label>Toggle Inset</label>
-        <input type="checkbox" value={inset} onChange={toggleInset} />
+        <input type="checkbox" onChange={toggleInset} checked={inset} />
       </div>
       <button onClick={handleReset} className="btn">
         Reset

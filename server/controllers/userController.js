@@ -6,6 +6,7 @@ const userController = {};
 // Handle user signup
 userController.hashPassword = (req, res, next) => {
   const { password } = req.body;
+  console.log(req.body);
 
   // Hash password
   bcrypt.genSalt(5, (err, salt) => {

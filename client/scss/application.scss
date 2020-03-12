@@ -21,6 +21,7 @@ body {
 nav {
   align-self: flex-end;
   margin: 1rem 0;
+  display: flex;
   > * {
     margin: 1rem;
     text-decoration: none;
