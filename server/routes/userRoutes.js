@@ -13,9 +13,14 @@ router.post(
 );
 
 // User signin
-router.get('/', userController.signIn, (req, res) => {
-  return res.status(200).send(res.locals.user);
-});
+router.post(
+  '/auth',
+  userController.hashPassword,
+  userController.signIn,
+  (req, res) => {
+    return res.status(200).send(res.locals.user);
+  }
+);
 
 // Update user favorites
 router.patch('/', userController.updateFavs, (req, res) => {

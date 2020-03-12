@@ -25,10 +25,11 @@ const mapStateToProps = state => ({
   signUpPassword: state.userInfo.signUpPassword,
   signInUsername: state.userInfo.signInUsername,
   signInEmail: state.userInfo.signInEmail,
-  signInPassword: state.userInfo.signInPassword
+  signInPassword: state.userInfo.signInPassword,
+  isLoggedIn: state.userInfo.isLoggedIn
 });
 
-const mapDispatchToProps = (dispatch, ownProps) => ({
+const mapDispatchToProps = dispatch => ({
   signIn: (...args) => dispatch(actions.signIn(...args)),
   signUp: (...args) => {
     dispatch(actions.signUp(...args));
@@ -40,6 +41,8 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
 
   handleSignUpPassword: e =>
     dispatch(actions.handleSignUpPassword(e.target.value)),
+  handleSignInUsername: e =>
+    dispatch(actions.handleSignInUsername(e.target.value)),
 
   handleSignInEmail: e => dispatch(actions.handleSignInEmail(e.target.value)),
 
@@ -55,7 +58,8 @@ const App = props => {
         <div className="content-container">
           <nav>
             <Link to="/">Home</Link>
-            <Link to="/signin">Log In</Link>
+            {!props.isLoggedIn && <Link to="/signin">Log In</Link>}
+            {props.isLoggedIn && <p>Favorites</p>}
             <Link to="/signup">Sign Up</Link>
             <p>Log Out</p>
           </nav>
@@ -66,10 +70,13 @@ const App = props => {
             <Route exact path="/signin">
               <SignIn
                 signIn={props.signIn}
+                username={props.signInUsername}
                 email={props.signInEmail}
                 password={props.signInPassword}
+                handleUsername={props.handleSignInUsername}
                 handleEmail={props.handleSignInEmail}
                 handlePassword={props.handleSignInPassword}
+                isLoggedIn={props.isLoggedIn}
               />
             </Route>
             <Route exact path="/signup">
@@ -81,6 +88,7 @@ const App = props => {
                 handleEmail={props.handleSignUpEmail}
                 handlePassword={props.handleSignUpPassword}
                 signUp={props.signUp}
+                isLoggedIn={props.isLoggedIn}
               />
             </Route>
           </Switch>

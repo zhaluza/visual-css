@@ -3,7 +3,13 @@ import './signup.scss';
 
 const SignUp = props => {
   const { username, email, password } = props;
-  const { handleUsername, handleEmail, handlePassword, signUp } = props;
+  const {
+    handleUsername,
+    handleEmail,
+    handlePassword,
+    signUp,
+    isLoggedIn
+  } = props;
   return (
     <Fragment>
       <h1>Sign Up</h1>
@@ -15,7 +21,7 @@ const SignUp = props => {
           onChange={handleUsername}
         />
         <input
-          type="text"
+          type="email"
           placeholder="email"
           value={email}
           onChange={handleEmail}
@@ -36,6 +42,7 @@ const SignUp = props => {
           Submit
         </button>
       </form>
+      {isLoggedIn && <p>Signup successful. You're logged in!</p>}
     </Fragment>
   );
 };

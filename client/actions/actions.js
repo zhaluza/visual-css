@@ -4,15 +4,17 @@ import * as types from '../constants/actionTypes';
 export function signIn(userInfo) {
   return dispatch => {
     dispatch(signInBegin);
-    return fetch('/users', {
-      method: 'GET',
+    return fetch('/users/auth', {
+      method: 'POST',
       headers: {
         'Content-Type': 'application/json'
       },
       body: JSON.stringify(userInfo)
     })
+      .then(handleErrors)
       .then(res => res.json())
       .then(json => {
+        console.log('res.json: ' + json);
         dispatch(signInSuccess(json));
         return json;
       })
@@ -22,7 +24,7 @@ export function signIn(userInfo) {
 
 export function signUp(userInfo) {
   return dispatch => {
-    dispatch(signUpBegin(userInfo));
+    dispatch(signUpBegin);
     return fetch('/users', {
       method: 'POST',
       headers: {
@@ -33,7 +35,6 @@ export function signUp(userInfo) {
       .then(handleErrors)
       .then(res => res.json())
       .then(json => {
-        console.log(json);
         dispatch(signUpSuccess(json));
         return json;
       })

@@ -1,5 +1,6 @@
 const mongoose = require('mongoose');
 require('dotenv').config();
+const bcrypt = require('bcrypt');
 const mongoURI = process.env.MONGO_URI;
 
 mongoose
@@ -33,6 +34,13 @@ const userSchema = new Schema({
   },
   favorites: [{ cssType: String, code: Array }]
 });
+
+userSchema.methods.comparePassword = function(password, cb) {
+  bcrypt.compare(password, this.password, function(err, match) {
+    if (err) return cb(err);
+    cb(null, match);
+  });
+};
 
 const User = mongoose.model('user', userSchema);
 

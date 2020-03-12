@@ -1,5 +1,6 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './sliderContainer.scss';
+import { ChromePicker } from 'react-color';
 
 // TODO: add color picking option
 
@@ -14,6 +15,8 @@ const SliderContainer = props => {
     handleReset,
     toggleInset
   } = props;
+
+  const [displayPicker, setDisplayPicker] = useState(false);
 
   return (
     <div className="slider-container">
@@ -81,6 +84,11 @@ const SliderContainer = props => {
         <label>Toggle Inset</label>
         <input type="checkbox" onChange={toggleInset} checked={inset} />
       </div>
+      {displayPicker ? (
+        <ChromePicker />
+      ) : (
+        <button className="btn">choose color</button>
+      )}
       <button onClick={handleReset} className="btn">
         Reset
       </button>

@@ -6,7 +6,6 @@ const userController = {};
 // Handle user signup
 userController.hashPassword = (req, res, next) => {
   const { password } = req.body;
-  console.log(req.body);
 
   // Hash password
   bcrypt.genSalt(5, (err, salt) => {
@@ -31,13 +30,21 @@ userController.createUser = (req, res, next) => {
   });
 };
 
-// Handle user signin
+// Handle user signin:
+
 userController.signIn = (req, res, next) => {
-  const { email, password } = req.body;
-  User.findOne({ email, password }, (err, user) => {
+  const { username, email, password } = req.body;
+  // Verify username first
+  User.findOne({ username, email }, (err, user) => {
     if (err) return next('Error occurred at userController.signIn');
-    res.locals.user = user;
-    return next();
+
+    // test matching password
+    user.comparePassword(password, (err, isMatch) => {
+      if (err) return next('Error occurred at userController.signIn');
+      console.log(password, isMatch);
+      res.locals.user = user;
+      return next();
+    });
   });
 };
 

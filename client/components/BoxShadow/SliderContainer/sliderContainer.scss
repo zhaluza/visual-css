@@ -1,6 +1,10 @@
 @import '../../../scss//styleVars';
 
 .slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   background: gray;
   width: 15rem;
   padding: 1rem;
