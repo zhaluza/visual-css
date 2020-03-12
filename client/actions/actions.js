@@ -7,9 +7,9 @@ export function signIn(userInfo) {
     return fetch('/users', {
       method: 'GET',
       headers: {
-        'Content-Type': 'application/json',
-        body: JSON.stringify(userInfo)
-      }
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(userInfo)
     })
       .then(res => res.json())
       .then(json => {

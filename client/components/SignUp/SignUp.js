@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from 'react';
+import React, { Fragment } from 'react';
 import './signup.scss';
 
 const SignUp = props => {
@@ -27,6 +27,7 @@ const SignUp = props => {
           onChange={handlePassword}
         />
         <button
+          className="btn"
           onClick={e => {
             e.preventDefault();
             signUp({ username, email, password });

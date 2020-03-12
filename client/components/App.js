@@ -29,7 +29,7 @@ const mapStateToProps = state => ({
 });
 
 const mapDispatchToProps = (dispatch, ownProps) => ({
-  signIn: () => dispatch(actions.signIn()),
+  signIn: (...args) => dispatch(actions.signIn(...args)),
   signUp: (...args) => {
     dispatch(actions.signUp(...args));
   },
@@ -39,7 +39,12 @@ const mapDispatchToProps = (dispatch, ownProps) => ({
   handleSignUpEmail: e => dispatch(actions.handleSignUpEmail(e.target.value)),
 
   handleSignUpPassword: e =>
-    dispatch(actions.handleSignUpPassword(e.target.value))
+    dispatch(actions.handleSignUpPassword(e.target.value)),
+
+  handleSignInEmail: e => dispatch(actions.handleSignInEmail(e.target.value)),
+
+  handleSignInPassword: e =>
+    dispatch(actions.handleSignInPassword(e.target.value))
 });
 
 const App = props => {
@@ -59,7 +64,13 @@ const App = props => {
               <BoxShadowContainer />
             </Route>
             <Route exact path="/signin">
-              <SignIn signIn={props.signIn} />
+              <SignIn
+                signIn={props.signIn}
+                email={props.signInEmail}
+                password={props.signInPassword}
+                handleEmail={props.handleSignInEmail}
+                handlePassword={props.handleSignInPassword}
+              />
             </Route>
             <Route exact path="/signup">
               <SignUp
