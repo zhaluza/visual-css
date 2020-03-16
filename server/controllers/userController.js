@@ -26,6 +26,7 @@ userController.createUser = (req, res, next) => {
   User.create({ username, email, password: res.locals.hash }, (err, result) => {
     if (err) return next('Error occurred at userController.createUser');
     res.locals.result = result;
+    res.locals.id = result._id;
     return next();
   });
 };
@@ -43,6 +44,7 @@ userController.signIn = (req, res, next) => {
       if (err) return next('Error occurred at userController.signIn');
       console.log(password, isMatch);
       res.locals.user = user;
+      res.locals.id = user.id;
       return next();
     });
   });
@@ -70,6 +72,15 @@ userController.deleteUser = (req, res, next) => {
     res.locals.result = result;
     return next();
   });
+};
+
+// Set cookies for user
+userController.setCookies = (req, res, next) => {
+  console.log('id: ', res.locals.id);
+  res.cookie('test', 'test');
+  res.cookie('visualcss', res.locals.id);
+  console.log('cookie set');
+  return next();
 };
 
 module.exports = userController;

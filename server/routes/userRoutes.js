@@ -7,6 +7,7 @@ router.post(
   '/',
   userController.hashPassword,
   userController.createUser,
+  userController.setCookies,
   (req, res) => {
     return res.status(200).send(res.locals.result);
   }
@@ -17,6 +18,7 @@ router.post(
   '/auth',
   userController.hashPassword,
   userController.signIn,
+  userController.setCookies,
   (req, res) => {
     return res.status(200).send(res.locals.user);
   }

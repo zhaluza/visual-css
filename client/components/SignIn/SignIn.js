@@ -18,19 +18,22 @@ const SignIn = props => {
       <h1>Sign In</h1>
       <form>
         <input
+          className="info-input"
           type="text"
           placeholder="username"
           value={username}
           onChange={handleUsername}
         />
         <input
+          className="info-input"
           type="email"
           placeholder="email"
           value={email}
           onChange={handleEmail}
         />
         <input
-          type="text"
+          className="info-input"
+          type="password"
           placeholder="password"
           value={password}
           onChange={handlePassword}
