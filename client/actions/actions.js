@@ -103,37 +103,62 @@ export const handleSignInPassword = text => ({
 
 export const logOut = () => ({ type: types.LOG_OUT });
 
+// MODE ACTIONS
+export const setBoxShadowMode = () => ({
+  type: types.SET_BOX_SHADOW_MODE
+});
+
+export const setBorderRadiusMode = () => ({
+  type: types.SET_BORDER_RADIUS_MODE
+});
+
 // BOX SHADOW ACTIONS
-export const handleXPosition = event => ({
-  type: types.HANDLE_X_POSITION,
+export const handleXPositionBoxShadow = event => ({
+  type: types.HANDLE_X_POSITION_BOX_SHADOW,
   payload: event
 });
 
-export const handleYPosition = event => ({
-  type: types.HANDLE_Y_POSITION,
+export const handleYPositionBoxShadow = event => ({
+  type: types.HANDLE_Y_POSITION_BOX_SHADOW,
   payload: event
 });
 
-export const handleSpread = event => ({
-  type: types.HANDLE_SPREAD,
+export const handleSpreadBoxShadow = event => ({
+  type: types.HANDLE_SPREAD_BOX_SHADOW,
   payload: event
 });
 
-export const handleBlur = event => ({
-  type: types.HANDLE_BLUR,
+export const handleBlurBoxShadow = event => ({
+  type: types.HANDLE_BLUR_BOX_SHADOW,
   payload: event
 });
 
-export const handleOpacity = event => ({
-  type: types.HANDLE_OPACITY,
+export const handleOpacityBoxShadow = event => ({
+  type: types.HANDLE_OPACITY_BOX_SHADOW,
   payload: event
 });
 
-export const toggleInset = event => ({
-  type: types.TOGGLE_INSET,
+export const toggleInsetBoxShadow = event => ({
+  type: types.TOGGLE_INSET_BOX_SHADOW,
   payload: event
 });
 
-export const handleReset = () => ({
-  type: types.HANDLE_RESET
+export const handleResetBoxShadow = () => ({
+  type: types.HANDLE_RESET_BOX_SHADOW
+});
+
+// Border Radius Actions
+export const handlePixelsBorderRadius = event => ({
+  type: types.HANDLE_PIXELS_BORDER_RADIUS,
+  payload: event
+});
+
+export const handlePercentsBorderRadius = event => ({
+  type: types.HANDLE_PERCENTS_BORDER_RADIUS,
+  payload: event
+});
+
+export const handleResetBorderRadius = event => ({
+  type: types.HANDLE_RESET_BORDER_RADIUS,
+  payload: event
 });
