@@ -17,14 +17,18 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
   handleXPosition: event =>
-    dispatch(actions.handleXPosition(event.target.value)),
+    dispatch(actions.handleXPositionBoxShadow(event.target.value)),
   handleYPosition: event =>
-    dispatch(actions.handleYPosition(event.target.value)),
-  handleSpread: event => dispatch(actions.handleSpread(event.target.value)),
-  handleBlur: event => dispatch(actions.handleBlur(event.target.value)),
-  handleOpacity: event => dispatch(actions.handleOpacity(event.target.value)),
-  toggleInset: event => dispatch(actions.toggleInset(event.target.checked)),
-  handleReset: () => dispatch(actions.handleReset())
+    dispatch(actions.handleYPositionBoxShadow(event.target.value)),
+  handleSpread: event =>
+    dispatch(actions.handleSpreadBoxShadow(event.target.value)),
+  handleBlur: event =>
+    dispatch(actions.handleBlurBoxShadow(event.target.value)),
+  handleOpacity: event =>
+    dispatch(actions.handleOpacityBoxShadow(event.target.value)),
+  toggleInset: event =>
+    dispatch(actions.toggleInsetBoxShadow(event.target.checked)),
+  handleReset: () => dispatch(actions.handleResetBoxShadow())
 });
 
 const BoxShadowContainer = props => {
