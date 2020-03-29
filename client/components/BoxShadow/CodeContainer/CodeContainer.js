@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import './codeContainer.scss';
+import '../../../scss/_code_container.scss';
 
 // TODO: Get copy button to work
 
