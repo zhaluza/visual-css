@@ -4,7 +4,6 @@ import * as actions from '../../actions/actions';
 import CodeContainer from '../../components/BoxShadow/CodeContainer/index';
 import CSSImage from '../../components/BoxShadow/CSSImage/index';
 import SliderContainer from '../../components/BoxShadow/SliderContainer/index';
-import './boxShadowContainer.scss';
 
 const mapStateToProps = state => ({
   posX: state.boxShadow.posX,
@@ -33,7 +32,7 @@ const mapDispatchToProps = dispatch => ({
 
 const BoxShadowContainer = props => {
   return (
-    <div className="box-shadow-container">
+    <div className="css-mode-container">
       <CSSImage
         posX={props.posX}
         posY={props.posY}
