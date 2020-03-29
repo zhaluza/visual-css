@@ -1,0 +1,22 @@
+@import '_colors';
+@import '_styleVars';
+
+.code-container {
+  background-color: rgb(26, 26, 26);
+  padding: 0.5rem;
+  color: white;
+  width: 20rem;
+  overflow: scroll;
+  border-radius: $border-radius;
+
+  textarea {
+    color: $code-green;
+    background: rgb(26, 26, 26);
+    width: 100%;
+    font-size: 1rem;
+    height: 5rem;
+  }
+  .code-buttons {
+    margin-top: 1rem;
+  }
+}
