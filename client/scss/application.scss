@@ -32,6 +32,15 @@ nav {
     color: rgb(255, 87, 87);
   }
 }
+
+.css-mode-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
 .content-container {
   display: flex;
   flex-direction: column;
