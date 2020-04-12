@@ -1,10 +1,9 @@
 import React, { useState } from 'react';
-import './sliderContainer.scss';
 import { ChromePicker } from 'react-color';
 
 // TODO: add color picking option
 
-const SliderContainer = props => {
+const SliderContainer = (props) => {
   const { posX, posY, spread, blur, opacity, inset } = props;
   const {
     handleXPosition,
@@ -13,7 +12,7 @@ const SliderContainer = props => {
     handleBlur,
     handleOpacity,
     handleReset,
-    toggleInset
+    toggleInset,
   } = props;
 
   const [displayPicker, setDisplayPicker] = useState(false);

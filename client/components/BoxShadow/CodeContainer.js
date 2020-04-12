@@ -1,9 +1,8 @@
 import React, { useState } from 'react';
-import '../../../scss/_code_container.scss';
 
 // TODO: Get copy button to work
 
-const CodeContainer = props => {
+const CodeContainer = (props) => {
   const { posX, posY, blur, spread, opacity, inset } = props;
   const codeString = `box-shadow: ${posX}px ${posY}px ${blur}px ${spread}px rgba(0, 0, 0, ${opacity})`;
   const insetCodeString = `box-shadow: inset ${posX}px ${posY}px ${blur}px ${spread}px rgba(0, 0, 0, ${opacity})`;
@@ -11,7 +10,7 @@ const CodeContainer = props => {
   const [copied, setCopied] = useState(false);
   const [message, setMessage] = useState('Copied!');
 
-  const copyCodeToClipboard = e => {
+  const copyCodeToClipboard = (e) => {
     e.preventDefault();
     const code = document.getElementById('code');
     console.log(code.innerHTML);
