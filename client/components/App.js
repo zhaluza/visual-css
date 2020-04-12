@@ -1,10 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
   Route,
   Link,
-  Prompt
+  Prompt,
 } from 'react-router-dom';
 import LoginButtons from './LoginButtons/index';
 import { connect } from 'react-redux';
@@ -13,12 +13,15 @@ import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Sidebar from './Sidebar/index';
 import BoxShadowContainer from '../containers/BoxShadowContainer/index';
+import BorderRadiusContainer from '../containers/BorderRadiusContainer/BorderRadiusContainer';
 
+// TODO: Add state for CSS settings (border-radius/box shadow)
 // TODO: Refactor app to use React Router for different CSS settings
 // TODO: Fix crash on signin/signup routes
 // TODO: Add favorites list
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
+  mode: state.mode.mode,
   user: state.userInfo.user,
   signUpUsername: state.userInfo.signUpUsername,
   signUpEmail: state.userInfo.signUpEmail,
@@ -26,35 +29,46 @@ const mapStateToProps = state => ({
   signInUsername: state.userInfo.signInUsername,
   signInEmail: state.userInfo.signInEmail,
   signInPassword: state.userInfo.signInPassword,
-  isLoggedIn: state.userInfo.isLoggedIn
+  isLoggedIn: state.userInfo.isLoggedIn,
 });
 
-const mapDispatchToProps = dispatch => ({
+const mapDispatchToProps = (dispatch) => ({
+  setBoxShadowMode: () => dispatch(actions.setBoxShadowMode()),
+  setBorderRadiusMode: () => dispatch(actions.setBorderRadiusMode()),
   signIn: (...args) => dispatch(actions.signIn(...args)),
   signUp: (...args) => {
     dispatch(actions.signUp(...args));
   },
-  handleSignUpUsername: e =>
+  handleSignUpUsername: (e) =>
     dispatch(actions.handleSignUpUsername(e.target.value)),
 
-  handleSignUpEmail: e => dispatch(actions.handleSignUpEmail(e.target.value)),
+  handleSignUpEmail: (e) => dispatch(actions.handleSignUpEmail(e.target.value)),
 
-  handleSignUpPassword: e =>
+  handleSignUpPassword: (e) =>
     dispatch(actions.handleSignUpPassword(e.target.value)),
-  handleSignInUsername: e =>
+  handleSignInUsername: (e) =>
     dispatch(actions.handleSignInUsername(e.target.value)),
 
-  handleSignInEmail: e => dispatch(actions.handleSignInEmail(e.target.value)),
+  handleSignInEmail: (e) => dispatch(actions.handleSignInEmail(e.target.value)),
 
-  handleSignInPassword: e =>
-    dispatch(actions.handleSignInPassword(e.target.value))
+  handleSignInPassword: (e) =>
+    dispatch(actions.handleSignInPassword(e.target.value)),
 });
 
-const App = props => {
+const App = (props) => {
+  useEffect(() => {
+    fetch('/users')
+      .then((res) => res.json())
+      .then((json) => console.log(json));
+  }, []);
+
   return (
     <Router>
       <div className="app">
-        <Sidebar />
+        <Sidebar
+          setBoxShadowMode={props.setBoxShadowMode}
+          setBorderRadiusMode={props.setBorderRadiusMode}
+        />
         <div className="content-container">
           <nav>
             <Link to="/">Home</Link>
@@ -65,7 +79,8 @@ const App = props => {
           </nav>
           <Switch>
             <Route exact path="/">
-              <BoxShadowContainer />
+              {props.mode === 'box-shadow' && <BoxShadowContainer />}
+              {props.mode === 'border-radius' && <BorderRadiusContainer />}
             </Route>
             <Route exact path="/signin">
               <SignIn
