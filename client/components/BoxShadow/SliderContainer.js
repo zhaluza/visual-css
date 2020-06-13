@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { ChromePicker } from 'react-color';
+import SliderContainerTemplate from '../templates/SliderContainerTemplate';
 
 // TODO: add color picking option
 
@@ -18,7 +19,7 @@ const SliderContainer = (props) => {
   const [displayPicker, setDisplayPicker] = useState(false);
 
   return (
-    <div className="slider-container">
+    <SliderContainerTemplate handleReset={handleReset}>
       <div className="slider-div">
         <p>Position X: {posX}px</p>
         <input
@@ -88,10 +89,7 @@ const SliderContainer = (props) => {
       ) : (
         <button className="btn">choose color</button>
       )}
-      <button onClick={handleReset} className="btn">
-        Reset
-      </button>
-    </div>
+    </SliderContainerTemplate>
   );
 };
 
