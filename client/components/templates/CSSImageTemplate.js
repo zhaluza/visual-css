@@ -1,6 +1,6 @@
 import React, { Fragment } from 'react';
 
-const CSSImage = (props) => {
+const CSSImageTemplate = (props) => {
   return (
     <Fragment>
       <div className="square" style={props.styleProps}></div>
@@ -8,4 +8,4 @@ const CSSImage = (props) => {
   );
 };
 
-export default CSSImage;
+export default CSSImageTemplate;
