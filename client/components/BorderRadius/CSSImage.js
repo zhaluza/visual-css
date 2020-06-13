@@ -1,4 +1,5 @@
 import React, { Fragment } from 'react';
+import CSSImageTemplate from '../templates/CSSImageTemplate';
 
 const CSSImage = (props) => {
   const { pixels, percent } = props;
@@ -10,11 +11,7 @@ const CSSImage = (props) => {
   const percentStyle = {
     borderRadius: `${percent}%`,
   };
-  return (
-    <Fragment>
-      <div className="square" style={pixelStyle}></div>
-    </Fragment>
-  );
+  return <CSSImageTemplate styleProps={pixelStyle} />;
 };
 
 export default CSSImage;

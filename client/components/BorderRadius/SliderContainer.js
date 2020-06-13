@@ -1,10 +1,11 @@
-import React, { useState } from 'react';
+import React from 'react';
+import SliderContainerTemplate from '../templates/SliderContainerTemplate';
 
 const SliderContainer = (props) => {
-  const { pixels, percent, handlePixels, handlePercents } = props;
+  const { pixels, percent, handlePixels, handlePercents, handleReset } = props;
 
   return (
-    <div className="slider-container">
+    <SliderContainerTemplate handleReset={handleReset}>
       <div className="slider-div">
         <p>Border Radius (pixels): {pixels}px</p>
         <input
@@ -28,8 +29,7 @@ const SliderContainer = (props) => {
           className="slider"
         />
       </div>
-      <button className="btn">Reset</button>
-    </div>
+    </SliderContainerTemplate>
   );
 };
 
