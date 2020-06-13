@@ -31,6 +31,7 @@ const BorderRadiusContainer = (props) => {
           percent={percent}
           handlePixels={handlePixels}
           handlePercents={handlePercents}
+          handleReset={handleReset}
         />
         <CodeContainer pixels={pixels} percent={percent} />
       </div>
