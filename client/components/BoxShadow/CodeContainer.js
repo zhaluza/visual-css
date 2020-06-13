@@ -29,10 +29,7 @@ const CodeContainer = (props) => {
 
   return (
     <div className="code-container">
-      <textarea
-        className="code"
-        readOnly={inset ? insetCodeString : codeString}
-      />
+      <textarea className="code" value={inset ? insetCodeString : codeString} />
       <div className="code-buttons">
         <button className="btn" onClick={copyCodeToClipboard}>
           Copy Code
