@@ -21,7 +21,7 @@ const borderRadiusReducer = (state = initialState, action) => {
       };
     case types.HANDLE_RESET_BORDER_RADIUS:
       return {
-        initialState,
+        ...initialState,
       };
     default:
       return state;
