@@ -1,5 +1,6 @@
 @import '_buttons';
 @import '_globals';
+@import '_code_container';
 
 *,
 *::before,
@@ -56,4 +57,24 @@ nav {
   > * {
     margin: 0 1rem;
   }
+}
+
+.slider-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba($slider-container-color, 0.6);
+  width: 20rem;
+  padding: 1rem;
+  border-radius: $border-radius;
+}
+
+// CSS Shapes
+$square-size: 200px;
+.square {
+  width: $square-size;
+  height: $square-size;
+  background-color: $box-color;
+  border-radius: 5px;
 }
