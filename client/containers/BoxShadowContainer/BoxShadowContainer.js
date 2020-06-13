@@ -1,36 +1,36 @@
-import React, { Fragment } from 'react';
+import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/actions';
-import CodeContainer from '../../components/BoxShadow/CodeContainer/index';
-import CSSImage from '../../components/BoxShadow/CSSImage/index';
-import SliderContainer from '../../components/BoxShadow/SliderContainer/index';
+import CodeContainer from '../../components/BoxShadow/CodeContainer';
+import CSSImage from '../../components/BoxShadow/CSSImage';
+import SliderContainer from '../../components/BoxShadow/SliderContainer';
 
-const mapStateToProps = state => ({
+const mapStateToProps = (state) => ({
   posX: state.boxShadow.posX,
   posY: state.boxShadow.posY,
   spread: state.boxShadow.spread,
   blur: state.boxShadow.blur,
   opacity: state.boxShadow.opacity,
-  inset: state.boxShadow.inset
+  inset: state.boxShadow.inset,
 });
 
-const mapDispatchToProps = dispatch => ({
-  handleXPosition: event =>
+const mapDispatchToProps = (dispatch) => ({
+  handleXPosition: (event) =>
     dispatch(actions.handleXPositionBoxShadow(event.target.value)),
-  handleYPosition: event =>
+  handleYPosition: (event) =>
     dispatch(actions.handleYPositionBoxShadow(event.target.value)),
-  handleSpread: event =>
+  handleSpread: (event) =>
     dispatch(actions.handleSpreadBoxShadow(event.target.value)),
-  handleBlur: event =>
+  handleBlur: (event) =>
     dispatch(actions.handleBlurBoxShadow(event.target.value)),
-  handleOpacity: event =>
+  handleOpacity: (event) =>
     dispatch(actions.handleOpacityBoxShadow(event.target.value)),
-  toggleInset: event =>
+  toggleInset: (event) =>
     dispatch(actions.toggleInsetBoxShadow(event.target.checked)),
-  handleReset: () => dispatch(actions.handleResetBoxShadow())
+  handleReset: () => dispatch(actions.handleResetBoxShadow()),
 });
 
-const BoxShadowContainer = props => {
+const BoxShadowContainer = (props) => {
   return (
     <div className="css-mode-container">
       <CSSImage
