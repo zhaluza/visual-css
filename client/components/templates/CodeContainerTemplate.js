@@ -14,6 +14,7 @@ const CodeContainerTemplate = (props) => {
     <div className="code-container">
       <textarea className="code" value={props.valueProps} />
       <div className="code-buttons">
+        {props.children}
         <button className="btn" onClick={copyCodeToClipboard}>
           Copy Code
         </button>
