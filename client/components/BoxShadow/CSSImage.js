@@ -1,4 +1,5 @@
-import React, { Fragment } from 'react';
+import React from 'react';
+import CSSImageTemplate from '../templates/CSSImageTemplate';
 
 const CSSImage = (props) => {
   const { posX, posY, spread, blur, inset, opacity } = props;
@@ -11,12 +12,7 @@ const CSSImage = (props) => {
     boxShadow: `inset ${posX}px ${posY}px ${blur}px ${spread}px rgba(0, 0, 0, ${opacity})`,
   };
   return (
-    <Fragment>
-      <div
-        className="square"
-        style={inset ? squareStyleInset : squareStyle}
-      ></div>
-    </Fragment>
+    <CSSImageTemplate styleProps={inset ? squareStyleInset : squareStyle} />
   );
 };
 
