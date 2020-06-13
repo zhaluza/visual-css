@@ -2,6 +2,11 @@ const express = require('express');
 const userController = require('../controllers/userController');
 const router = express.Router();
 
+// Verify user identity (check cookies)
+router.get('/', userController.verifyCookies, (req, res) => {
+  return res.status(200).send(res.locals.cookieId);
+});
+
 // Create new user
 router.post(
   '/',
