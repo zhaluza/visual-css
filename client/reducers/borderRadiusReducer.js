@@ -2,7 +2,7 @@ import * as types from '../constants/actionTypes';
 
 const initialState = {
   pixels: 0,
-  percent: 0
+  percent: 0,
 };
 
 const borderRadiusReducer = (state = initialState, action) => {
@@ -11,17 +11,17 @@ const borderRadiusReducer = (state = initialState, action) => {
       const pixels = action.payload;
       return {
         ...state,
-        pixels
+        pixels,
       };
     case types.HANDLE_PERCENTS_BORDER_RADIUS:
       const percent = action.payload;
       return {
         ...state,
-        percent
+        percent,
       };
     case types.HANDLE_RESET_BORDER_RADIUS:
       return {
-        initialState
+        initialState,
       };
     default:
       return state;
