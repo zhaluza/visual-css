@@ -83,4 +83,17 @@ userController.setCookies = (req, res, next) => {
   return next();
 };
 
+// Check cookie when user accesses page
+userController.verifyCookies = (req, res, next) => {
+  if (req.cookies.visualcss) {
+    user.findOne({id: req.cookies.visualcss}, (err, result) => {
+      
+    })
+    res.locals.cookieId = req.cookies.visualcss;
+    next();
+  } else {
+    next('no cookie found');
+  }
+};
+
 module.exports = userController;
