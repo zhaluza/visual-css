@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/actions';
-import CodeContainer from '../../components/BorderRadius/CodeContainer';
-import CSSImage from '../../components/BorderRadius/CSSImage';
-import SliderContainer from '../../components/BorderRadius/SliderContainer';
+import CodeContainer from '../../components/CSSModes/BorderRadius/CodeContainer';
+import CSSImage from '../../components/CSSModes/BorderRadius/CSSImage';
+import SliderContainer from '../../components/CSSModes/BorderRadius/SliderContainer';
 
 // TODO: implement this for percentages too
 

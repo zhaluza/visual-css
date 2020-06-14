@@ -1,9 +1,9 @@
 import React from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/actions';
-import CodeContainer from '../../components/BoxShadow/CodeContainer';
-import CSSImage from '../../components/BoxShadow/CSSImage';
-import SliderContainer from '../../components/BoxShadow/SliderContainer';
+import CodeContainer from '../../components/CSSModes/BoxShadow/CodeContainer';
+import CSSImage from '../../components/CSSModes/BoxShadow/CSSImage';
+import SliderContainer from '../../components/CSSModes/BoxShadow/SliderContainer';
 
 const mapStateToProps = (state) => ({
   posX: state.boxShadow.posX,
