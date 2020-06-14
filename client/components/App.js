@@ -12,13 +12,12 @@ import * as actions from '../actions/actions';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Sidebar from './Sidebar/index';
-import BoxShadowContainer from '../containers/BoxShadowContainer/index';
-import BorderRadiusContainer from '../containers/BorderRadiusContainer/BorderRadiusContainer';
+import BoxShadowContainer from '../containers/BoxShadowContainer';
+import BorderRadiusContainer from '../containers/BorderRadiusContainer';
 
-// TODO: Add state for CSS settings (border-radius/box shadow)
-// TODO: Refactor app to use React Router for different CSS settings
-// TODO: Fix crash on signin/signup routes
-// TODO: Add favorites list
+// TODO: Finish Rotate3D feature
+// TODO: Implement authentication properly
+// TODO: Add favorites list for users
 
 const mapStateToProps = (state) => ({
   mode: state.mode.mode,
