@@ -21,8 +21,6 @@ export const LOG_OUT = 'LOG_OUT';
 export const SET_BOX_SHADOW_MODE = 'SET_BOX_SHADOW_MODE';
 export const SET_BORDER_RADIUS_MODE = 'SET_BORDER_RADIUS_MODE';
 
-// TODO: Rename all actions so they don't conflict with other modes (e.g. HANDLE_X_POSITION_BOX_SHADOW)
-
 // Box Shadow
 export const HANDLE_X_POSITION_BOX_SHADOW = 'HANDLE_X_POSITION_BOX_SHADOW';
 export const HANDLE_Y_POSITION_BOX_SHADOW = 'HANDLE_Y_POSITION_BOX_SHADOW';
