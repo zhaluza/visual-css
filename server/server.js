@@ -1,8 +1,8 @@
 const path = require('path');
 const express = require('express');
 const cookieParser = require('cookie-parser');
-const bodyParser = require('body-parser');
 const userRouter = require('./routes/userRoutes');
+const { urlencoded, json } = require('body-parser');
 
 const app = express();
 
@@ -12,8 +12,7 @@ const PORT = 3000;
 app.use(cookieParser());
 
 // Handle parsing request body
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
+app.use(urlencoded({ extended: true }));
 
 // Handle requests for client files
 app.use(express.static(path.resolve(__dirname, '../client')));
