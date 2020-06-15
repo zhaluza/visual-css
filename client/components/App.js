@@ -14,6 +14,7 @@ import SignUp from './SignUp';
 import Sidebar from './Sidebar/index';
 import BoxShadowContainer from '../containers/BoxShadowContainer';
 import BorderRadiusContainer from '../containers/BorderRadiusContainer';
+import Rotate3DContainer from '../containers/Rotate3DContainer';
 
 // TODO: Finish Rotate3D feature
 // TODO: Implement authentication properly
@@ -34,6 +35,7 @@ const mapStateToProps = (state) => ({
 const mapDispatchToProps = (dispatch) => ({
   setBoxShadowMode: () => dispatch(actions.setBoxShadowMode()),
   setBorderRadiusMode: () => dispatch(actions.setBorderRadiusMode()),
+  setRotate3DMode: () => dispatch(actions.setRotate3DMode()),
   signIn: (...args) => dispatch(actions.signIn(...args)),
   signUp: (...args) => {
     dispatch(actions.signUp(...args));
@@ -67,6 +69,7 @@ const App = (props) => {
         <Sidebar
           setBoxShadowMode={props.setBoxShadowMode}
           setBorderRadiusMode={props.setBorderRadiusMode}
+          setRotate3DMode={props.setRotate3DMode}
         />
         <div className="content-container">
           <nav>
@@ -80,6 +83,7 @@ const App = (props) => {
             <Route exact path="/">
               {props.mode === 'box-shadow' && <BoxShadowContainer />}
               {props.mode === 'border-radius' && <BorderRadiusContainer />}
+              {props.mode === 'rotate-3d' && <Rotate3DContainer />}
             </Route>
             <Route exact path="/signin">
               <SignIn
