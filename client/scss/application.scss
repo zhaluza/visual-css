@@ -78,3 +78,42 @@ $square-size: 200px;
   background-color: $box-color;
   border-radius: 5px;
 }
+
+.cube {
+  width: $square-size;
+  height: $square-size;
+
+  transform-style: preserve-3d;
+  .cube__face {
+    position: absolute;
+    width: $square-size;
+    height: $square-size;
+    border: 1px solid black;
+    background-color: $box-color;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    p {
+      font-size: 2rem;
+      color: rgb(253, 253, 253);
+    }
+  }
+  .cube__face-front {
+    transform: rotateY(0deg) translateZ($square-size / 2);
+  }
+  .cube__face-right {
+    transform: rotateY(90deg) translateZ($square-size / 2);
+  }
+  .cube__face-back {
+    transform: rotateY(180deg) translateZ($square-size / 2);
+  }
+  .cube__face-left {
+    transform: rotateY(-90deg) translateZ($square-size / 2);
+  }
+  .cube__face-top {
+    transform: rotateX(90deg) translateZ($square-size / 2);
+  }
+  .cube__face-bottom {
+    transform: rotateX(-90deg) translateZ($square-size / 2);
+  }
+}
