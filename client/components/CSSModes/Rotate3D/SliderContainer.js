@@ -25,8 +25,8 @@ const SliderContainer = (props) => {
         <p>X Rotation: {x}</p>
         <input
           type="range"
-          min="0"
-          max="50"
+          min="-300"
+          max="300"
           defaultValue="0"
           value={x}
           onChange={handleX}
@@ -37,8 +37,8 @@ const SliderContainer = (props) => {
         <p>Y Rotation: {y}</p>
         <input
           type="range"
-          min="0"
-          max="50"
+          min="-300"
+          max="300"
           defaultValue="0"
           value={y}
           onChange={handleY}
@@ -49,8 +49,8 @@ const SliderContainer = (props) => {
         <p>Z Rotation: {z}</p>
         <input
           type="range"
-          min="0"
-          max="50"
+          min="-300"
+          max="300"
           defaultValue="0"
           value={z}
           onChange={handleZ}
