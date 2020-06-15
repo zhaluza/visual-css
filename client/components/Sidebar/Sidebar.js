@@ -2,7 +2,7 @@ import React from 'react';
 import './sidebar.scss';
 
 const Sidebar = (props) => {
-  const { setBoxShadowMode, setBorderRadiusMode } = props;
+  const { setBoxShadowMode, setBorderRadiusMode, setRotate3DMode } = props;
   return (
     <div className="sidebar">
       <h2>Visual CSS</h2>
@@ -12,6 +12,9 @@ const Sidebar = (props) => {
       </button>
       <button className="btn" onClick={setBorderRadiusMode}>
         Border Radius
+      </button>
+      <button className="btn" onClick={setRotate3DMode}>
+        Rotate 3D
       </button>
     </div>
   );
