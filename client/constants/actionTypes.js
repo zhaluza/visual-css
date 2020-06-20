@@ -1,22 +1,3 @@
-// Signin/Signup
-export const SIGN_IN_BEGIN = 'SIGN_IN_BEGIN';
-export const SIGN_IN_SUCCESS = 'SIGN_IN_SUCCESS';
-export const SIGN_IN_FAILURE = 'SIGN_IN_FAILURE';
-
-export const SIGN_UP_BEGIN = 'SIGN_UP_BEGIN';
-export const SIGN_UP_SUCCESS = 'SIGN_UP_SUCCESS';
-export const SIGN_UP_FAILURE = 'SIGN_UP_FAILURE';
-
-export const HANDLE_SU_USERNAME = 'HANDLE_SU_USERNAME';
-export const HANDLE_SU_EMAIL = 'HANDLE_SU_EMAIL';
-export const HANDLE_SU_PASSWORD = 'HANDLE_SU_PASSWORD';
-
-export const HANDLE_SI_USERNAME = 'HANDLE_SI_USERNAME';
-export const HANDLE_SI_EMAIL = 'HANDLE_SI_EMAIL';
-export const HANDLE_SI_PASSWORD = 'HANDLE_SI_PASSWORD';
-
-export const LOG_OUT = 'LOG_OUT';
-
 // Change modes
 export const SET_BOX_SHADOW_MODE = 'SET_BOX_SHADOW_MODE';
 export const SET_BORDER_RADIUS_MODE = 'SET_BORDER_RADIUS_MODE';
