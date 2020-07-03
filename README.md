@@ -1,7 +1,8 @@
 # Visual CSS
 
 Visual CSS is a tool for frontend and backend developers alike to improve their
-CSS skills.
+CSS skills. Experience a live version at
+[css.haluza.dev](https://css.haluza.dev/).
 
 <!-- TABLE OF CONTENTS -->
 
@@ -20,9 +21,9 @@ CSS skills.
 
 ## About The Project
 
-<!-- <p align="center">
+<p align="center">
     <img width="500" src="https://github.com/zhaluza/visual-css/blob/master/assets/screenshot_1.png?raw=true">
-</p> -->
+</p>
 
 Visual CSS provides developers with an interactive sandbox-like environment to
 experiment with different CSS properties. The app currently includes the
