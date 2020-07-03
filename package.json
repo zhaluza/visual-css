@@ -4,8 +4,8 @@
   "description": "An interactive visualizer for learning and experimenting with CSS features.",
   "main": "server.js",
   "scripts": {
-    "build": "NODE_ENV=production webpack",
-    "dev:start": "NODE_ENV=development webpack-dev-server --open"
+    "build": "webpack --mode production",
+    "dev:start": "webpack-dev-server --open --mode development"
   },
   "author": "Zac Haluza",
   "license": "ISC",
