@@ -1,5 +1,4 @@
 import React, { useState, useRef } from 'react';
-import { copyCodeToClipboard } from '../../functions/copyCode';
 
 const CodeContainerTemplate = (props) => {
   const [copied, setCopied] = useState(false);
