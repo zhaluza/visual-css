@@ -2,7 +2,7 @@ import React, { useState, useRef } from 'react';
 
 const CodeContainerTemplate = (props) => {
   const [copied, setCopied] = useState(false);
-  const [message, setMessage] = useState('Copied!');
+  const [message, setMessage] = useState('Copied to clipboard!');
   const textAreaRef = useRef(null);
 
   function copyCodeToClipBoard(e) {
