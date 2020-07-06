@@ -7,10 +7,6 @@ import BoxShadowContainer from './containers/BoxShadowContainer';
 import BorderRadiusContainer from './containers/BorderRadiusContainer';
 import Rotate3DContainer from './containers/Rotate3DContainer';
 
-// TODO: Finish Rotate3D feature
-// TODO: Implement authentication properly
-// TODO: Add favorites list for users
-
 const mapStateToProps = (state) => ({
   mode: state.mode.mode,
 });
