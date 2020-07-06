@@ -2,15 +2,23 @@
 @import '_colors';
 
 .btn {
+  width: 10rem;
   font-size: 1rem;
   padding: 0.5rem 1rem;
   margin: 0.25rem;
   border: none;
   border-radius: $border-radius;
   background-color: $button-bg;
-  color: white;
+  color: $dark;
   cursor: pointer;
   font-family: 'Nunito Sans', sans-serif;
+  transition: background-color ease 0.15s;
+  transition: color ease 0.15s;
+}
+
+.active {
+  background-color: $button-active-bg;
+  color: white;
 }
 
 .copy-btn {
