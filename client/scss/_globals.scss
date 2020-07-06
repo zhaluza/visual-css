@@ -1,8 +1,9 @@
+@import './constants';
 .info-input {
   padding: 0.4rem 0.2rem;
   font-size: 1rem;
   border: 1px solid rgba(22, 22, 22, 0.1);
   border-radius: 5px;
   margin: 0.2rem;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.2);
+  box-shadow: $box-shadow;
 }
