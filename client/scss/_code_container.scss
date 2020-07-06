@@ -1,5 +1,6 @@
-@import '_colors';
-@import '_styleVars';
+@import './colors';
+@import './styleVars';
+@import './constants';
 
 .code-container {
   background-color: rgb(26, 26, 26);
@@ -8,6 +9,7 @@
   width: 20rem;
   overflow: scroll;
   border-radius: $border-radius;
+  box-shadow: $box-shadow;
 
   textarea {
     color: $code-green;
