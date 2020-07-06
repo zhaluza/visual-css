@@ -21,6 +21,7 @@ const App = (props) => {
   return (
     <div className="app">
       <Sidebar
+        mode={props.mode}
         setBoxShadowMode={props.setBoxShadowMode}
         setBorderRadiusMode={props.setBorderRadiusMode}
         setRotate3DMode={props.setRotate3DMode}
