@@ -1,6 +1,7 @@
-@import '_buttons';
-@import '_globals';
-@import '_code_container';
+@import './buttons';
+@import './globals';
+@import './code_container';
+@import './constants';
 
 *,
 *::before,
@@ -58,6 +59,7 @@ body {
   width: 20rem;
   padding: 1rem;
   border-radius: $border-radius;
+  box-shadow: $box-shadow;
 }
 
 // CSS Shapes
