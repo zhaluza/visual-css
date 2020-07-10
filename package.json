@@ -5,7 +5,7 @@
   "main": "server.js",
   "scripts": {
     "build": "webpack --mode production",
-    "dev:start": "webpack-dev-server --open --mode development"
+    "start": "webpack-dev-server --open --mode development"
   },
   "author": "Zac Haluza",
   "license": "ISC",
