@@ -3,7 +3,7 @@
 @import './constants';
 
 .code-container {
-  background-color: rgb(26, 26, 26);
+  background-color: $code-bg;
   padding: 0.5rem;
   color: white;
   width: 20rem;
