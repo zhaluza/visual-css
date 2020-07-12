@@ -1,9 +1,16 @@
 import React from 'react';
 import './sidebar.scss';
 
-const Sidebar = ({ setBoxShadowMode, setBorderRadiusMode, setRotate3DMode, mode }) => {
+const Sidebar = ({
+  setBoxShadowMode,
+  setBorderRadiusMode,
+  setRotate3DMode,
+  mode,
+  menuOpen,
+  isMobile,
+}) => {
   return (
-    <div className="sidebar">
+    <div className={`sidebar ${isMobile && 'sidebar-mobile'} ${!menuOpen && 'sidebar-hidden'}`}>
       <h2>Visual CSS</h2>
       <p>Choose a CSS setting and experiment.</p>
       <button className={`btn ${mode === 'box-shadow' ? 'active' : ''}`} onClick={setBoxShadowMode}>
