@@ -5,7 +5,7 @@ const SliderContainerTemplate = (props) => {
     <div className="slider-container">
       {props.children}
 
-      <button onClick={props.handleReset} className="btn">
+      <button onClick={props.handleReset} className="btn btn-2">
         Reset
       </button>
     </div>

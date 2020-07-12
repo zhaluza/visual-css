@@ -26,7 +26,7 @@ const CodeContainerTemplate = (props) => {
       <div className="code-buttons">
         {props.children}
         {document.queryCommandSupported('copy') && (
-          <button className="btn copy-btn" onClick={copyCodeToClipBoard}>
+          <button className="btn btn-2 copy-btn" onClick={copyCodeToClipBoard}>
             Copy Code
           </button>
         )}
