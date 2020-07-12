@@ -1,7 +1,8 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux';
 import * as actions from './actions/actions';
 
+import Burger from './components/Burger';
 import Sidebar from './components/Sidebar';
 import BoxShadowContainer from './containers/BoxShadowContainer';
 import BorderRadiusContainer from './containers/BorderRadiusContainer';
@@ -18,9 +19,36 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const App = (props) => {
+  // handle burger menu for mobile devices
+  // mobile settings are active by default
+  const [isMobile, setIsMobile] = useState(true);
+  const [menuOpen, setMenuOpen] = useState(false);
+
+  const toggleMenu = () => {
+    setMenuOpen((prevState) => !prevState);
+  };
+
+  // close navbar on mobile if user taps elsewhere
+  const closeNav = () => {
+    if (isMobile && menuOpen) {
+      setMenuOpen(false);
+    }
+  };
+
+  // use burger menu for screen sizes smaller than 700px
+  useEffect(() => {
+    if (window.innerWidth > 700) {
+      setIsMobile(false);
+      setMenuOpen(true);
+    }
+  }, []);
+
   return (
     <div className="app">
+      {isMobile && <Burger menuOpen={menuOpen} toggleMenu={toggleMenu} />}
       <Sidebar
+        isMobile={isMobile}
+        menuOpen={menuOpen}
         mode={props.mode}
         setBoxShadowMode={props.setBoxShadowMode}
         setBorderRadiusMode={props.setBorderRadiusMode}
