@@ -1,0 +1,22 @@
+@import '../../scss/colors';
+
+.burger {
+  position: fixed;
+  top: 0;
+  left: 0;
+  margin-left: 0.7rem;
+  padding-top: 0.7rem;
+  z-index: 2;
+
+  .bar {
+    width: 35px;
+    margin: 3px;
+    height: 6px;
+    border-radius: 15px;
+    background-color: $soft-sidebar;
+    transition: 0.4s all ease;
+  }
+  .bar-close {
+    background-color: rgba(255, 255, 255, 0.8);
+  }
+}
