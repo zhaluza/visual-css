@@ -54,7 +54,7 @@ const App = (props) => {
         setBorderRadiusMode={props.setBorderRadiusMode}
         setRotate3DMode={props.setRotate3DMode}
       />
-      <div className="content-container">
+      <div className="content-container" onClick={() => closeNav()}>
         {props.mode === 'box-shadow' && <BoxShadowContainer />}
         {props.mode === 'border-radius' && <BorderRadiusContainer />}
         {props.mode === 'rotate-3d' && <Rotate3DContainer />}
