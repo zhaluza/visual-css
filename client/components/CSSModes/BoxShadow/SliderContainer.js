@@ -84,11 +84,7 @@ const SliderContainer = (props) => {
         <label>Toggle Inset</label>
         <input type="checkbox" onChange={toggleInset} checked={inset} />
       </div>
-      {displayPicker ? (
-        <ChromePicker />
-      ) : (
-        <button className="btn">choose color</button>
-      )}
+      {displayPicker ? <ChromePicker /> : <button className="btn btn-2">choose color</button>}
     </SliderContainerTemplate>
   );
 };
