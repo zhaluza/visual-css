@@ -1,7 +1,23 @@
 @import '../../scss/colors';
+@import '../../scss/constants';
+
 .sidebar {
   background-color: $soft-sidebar;
   width: 15rem;
   padding: 1rem;
   color: white;
+  transition: transform 0.3s ease;
+}
+
+.sidebar-mobile {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: rgba($soft-sidebar, 0.9);
+  padding-top: 45px;
+  border-bottom-right-radius: $border-radius;
+}
+
+.sidebar-hidden {
+  transform: translateX(-15rem);
 }
