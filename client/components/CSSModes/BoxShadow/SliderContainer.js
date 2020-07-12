@@ -18,6 +18,15 @@ const SliderContainer = (props) => {
 
   const [displayPicker, setDisplayPicker] = useState(false);
 
+  const toggleDivStyling = {
+    display: 'flex',
+    alignItems: 'center',
+  };
+
+  const toggleInsetSpacing = {
+    marginLeft: '.5rem',
+  };
+
   return (
     <SliderContainerTemplate handleReset={handleReset}>
       <div className="slider-div">
@@ -80,9 +89,9 @@ const SliderContainer = (props) => {
         />
       </div>
 
-      <div className="toggle-div">
+      <div className="toggle-div" style={toggleDivStyling}>
         <label>Toggle Inset</label>
-        <input type="checkbox" onChange={toggleInset} checked={inset} />
+        <input type="checkbox" onChange={toggleInset} checked={inset} style={toggleInsetSpacing} />
       </div>
       {displayPicker ? <ChromePicker /> : <button className="btn btn-2">choose color</button>}
     </SliderContainerTemplate>
