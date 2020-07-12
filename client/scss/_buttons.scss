@@ -12,8 +12,16 @@
   color: $dark;
   cursor: pointer;
   font-family: 'Nunito Sans', sans-serif;
-  transition: background-color ease 0.15s;
-  transition: color ease 0.15s;
+  transition: all ease 0.15s;
+  &:hover {
+    background-color: $button-hover-bg;
+    color: white;
+  }
+}
+
+.btn-2 {
+  background-color: $button-bg-2;
+  color: white;
 }
 
 .active {
