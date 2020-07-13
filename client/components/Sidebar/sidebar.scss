@@ -16,6 +16,7 @@
   background-color: rgba($soft-sidebar, 0.9);
   padding-top: 45px;
   border-bottom-right-radius: $border-radius;
+  z-index: 1;
 }
 
 .sidebar-hidden {
