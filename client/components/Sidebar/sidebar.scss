@@ -22,3 +22,9 @@
 .sidebar-hidden {
   transform: translateX(-15rem);
 }
+
+@media (min-width: 701px) {
+  .sidebar {
+    transition: none;
+  }
+}
