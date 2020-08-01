@@ -13,15 +13,12 @@ const mapStateToProps = (state) => ({
 });
 
 const mapDispatchToProps = (dispatch) => ({
-  handlePixels: (event) =>
-    dispatch(actions.handlePixelsBorderRadius(event.target.value)),
-  handlePercents: (event) =>
-    dispatch(actions.handlePercentsBorderRadius(event.target.value)),
+  handlePixels: (event) => dispatch(actions.handlePixelsBorderRadius(event.target.value)),
+  handlePercents: (event) => dispatch(actions.handlePercentsBorderRadius(event.target.value)),
   handleReset: () => dispatch(actions.handleResetBorderRadius()),
 });
 
-const BorderRadiusContainer = (props) => {
-  const { pixels, percent, handlePixels, handlePercents, handleReset } = props;
+const BorderRadiusContainer = ({ pixels, percent, handlePixels, handlePercents, handleReset }) => {
   return (
     <div className="css-mode-container">
       <CSSImage pixels={pixels} percent={percent} />
@@ -39,7 +36,4 @@ const BorderRadiusContainer = (props) => {
   );
 };
 
-export default connect(
-  mapStateToProps,
-  mapDispatchToProps
-)(BorderRadiusContainer);
+export default connect(mapStateToProps, mapDispatchToProps)(BorderRadiusContainer);
