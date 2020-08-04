@@ -10,6 +10,7 @@
   "author": "Zac Haluza",
   "license": "ISC",
   "dependencies": {
+    "express": "^4.17.1",
     "node-sass": "^4.14.1",
     "react": "^16.13.0",
     "react-color": "^2.18.0",
@@ -24,6 +25,7 @@
     "babel-loader": "^8.0.6",
     "css-loader": "^3.4.2",
     "html-webpack-plugin": "^4.3.0",
+    "nodemon": "^2.0.4",
     "redux-devtools-extension": "^2.13.8",
     "sass-loader": "^8.0.2",
     "style-loader": "^1.1.3",
