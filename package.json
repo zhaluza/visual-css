@@ -4,13 +4,15 @@
   "description": "An interactive visualizer for learning and experimenting with CSS features.",
   "main": "server.js",
   "scripts": {
-    "start": "node server/server.js",
-    "build": "NODE_ENV=PRODUCTION webpack",
+    "start": "nodemon server/server.js",
+    "build": "NODE_ENV=production webpack",
     "dev:start": "NODE_ENV=development webpack-dev-server --open & nodemon server/server.js"
   },
   "author": "Zac Haluza",
   "license": "ISC",
   "dependencies": {
+    "axios": "^0.19.2",
+    "dotenv": "^8.2.0",
     "express": "^4.17.1",
     "mongoose": "^5.10.0",
     "node-sass": "^4.14.1",
