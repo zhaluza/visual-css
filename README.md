@@ -1,8 +1,9 @@
 # Visual CSS
 
-Visual CSS is a tool for frontend and backend developers alike to improve their
-CSS skills. Experience a live version at
-[css.haluza.dev](https://css.haluza.dev/).
+Visual CSS is a tool for frontend and backend developers alike to improve their CSS skills.
+Experience a live version at [css.haluza.dev](https://css.haluza.dev/) (note: Github login is not
+yet functioning - currently building a backend to let users log in and save code snippets to their
+accounts).
 
 <!-- TABLE OF CONTENTS -->
 
@@ -25,9 +26,8 @@ CSS skills. Experience a live version at
     <img width="500" src="https://github.com/zhaluza/visual-css/blob/master/assets/screenshot_1.png?raw=true">
 </p>
 
-Visual CSS provides developers with an interactive sandbox-like environment to
-experiment with different CSS properties. The app currently includes the
-following properties:
+Visual CSS provides developers with an interactive sandbox-like environment to experiment with
+different CSS properties. The app currently includes the following properties:
 
 - [box-shadow](https://developer.mozilla.org/en/docs/Web/CSS/box-shadow)
 - [border-radius](https://developer.mozilla.org/en/docs/Web/CSS/border-radius)
@@ -85,5 +85,4 @@ Distributed under the ISC License.
 
 ## Contact
 
-Thoughts or questions? Contact me at
-[zac.haluza@gmail.com](mailto:zac.haluza@gmail.com)!
+Thoughts or questions? Contact me at [zac.haluza@gmail.com](mailto:zac.haluza@gmail.com)!
