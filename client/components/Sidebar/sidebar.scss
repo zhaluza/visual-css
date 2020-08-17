@@ -2,18 +2,20 @@
 @import '../../scss/constants';
 
 .sidebar {
-  background-color: $soft-sidebar;
+  background-color: $sidebar;
   width: 15rem;
   padding: 1rem;
-  color: white;
+  text-align: right;
+  color: #fff;
   transition: transform 0.3s ease;
+  box-shadow: $box-shadow;
 }
 
 .sidebar-mobile {
   position: fixed;
   top: 0;
   left: 0;
-  background-color: rgba($soft-sidebar, 0.9);
+  background-color: rgba($accent, 0.9);
   padding-top: 45px;
   border-bottom-right-radius: $border-radius;
   z-index: 1;
