@@ -11,10 +11,6 @@
   "author": "Zac Haluza",
   "license": "ISC",
   "dependencies": {
-    "axios": "^0.19.2",
-    "dotenv": "^8.2.0",
-    "express": "^4.17.1",
-    "mongoose": "^5.10.0",
     "node-sass": "^4.14.1",
     "react": "^16.13.0",
     "react-color": "^2.18.0",
