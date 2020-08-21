@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
-import { ChromePicker } from 'react-color';
+import React, { useState, Fragment } from 'react';
+import { SketchPicker } from 'react-color';
 import SliderContainerTemplate from '../../templates/SliderContainerTemplate';
 
-// TODO: add color picking option
+// TODO: add color picking option for shadow
 
 const SliderContainer = (props) => {
-  const { posX, posY, spread, blur, opacity, inset } = props;
+  const { posX, posY, spread, blur, opacity, inset, boxColor } = props;
   const {
     handleXPosition,
     handleYPosition,
@@ -14,6 +14,8 @@ const SliderContainer = (props) => {
     handleOpacity,
     handleReset,
     toggleInset,
+    handleBoxColor,
+    resetBoxColor,
   } = props;
 
   const [displayPicker, setDisplayPicker] = useState(false);
@@ -27,8 +29,13 @@ const SliderContainer = (props) => {
     marginLeft: '.5rem',
   };
 
+  const resetBoxColorAndSettings = () => {
+    handleReset();
+    resetBoxColor();
+  };
+
   return (
-    <SliderContainerTemplate handleReset={handleReset}>
+    <SliderContainerTemplate handleReset={resetBoxColorAndSettings}>
       <div className="slider-div">
         <p>Position X: {posX}px</p>
         <input
@@ -93,7 +100,18 @@ const SliderContainer = (props) => {
         <label>Toggle Inset</label>
         <input type="checkbox" onChange={toggleInset} checked={inset} style={toggleInsetSpacing} />
       </div>
-      {displayPicker ? <ChromePicker /> : <button className="btn btn-2">choose color</button>}
+      {displayPicker ? (
+        <Fragment>
+          <SketchPicker color={boxColor} onChange={(color) => handleBoxColor(color.hex)} />
+          <button className="btn btn-2" onClick={() => setDisplayPicker(false)}>
+            Close color picker
+          </button>
+        </Fragment>
+      ) : (
+        <button className="btn btn-2" onClick={() => setDisplayPicker(true)}>
+          Change box color
+        </button>
+      )}
     </SliderContainerTemplate>
   );
 };

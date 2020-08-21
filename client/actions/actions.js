@@ -13,6 +13,16 @@ export const setRotate3DMode = () => ({
   type: types.SET_ROTATE_3D_MODE,
 });
 
+// COLOR ACTIONS
+export const handleBoxColor = (newColor) => ({
+  type: types.HANDLE_BOX_COLOR,
+  payload: newColor,
+});
+
+export const resetBoxColor = () => ({
+  type: types.RESET_BOX_COLOR,
+});
+
 // BOX SHADOW ACTIONS
 export const handleXPositionBoxShadow = (event) => ({
   type: types.HANDLE_X_POSITION_BOX_SHADOW,
