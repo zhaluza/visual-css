@@ -6,14 +6,10 @@ const htmlPlugin = new HtmlWebPackPlugin({
 const path = require('path');
 
 module.exports = {
-  mode: process.env.NODE_ENV,
-  devServer: {
-    contentBase: path.resolve(__dirname, 'client'),
-    historyApiFallback: true,
-    proxy: {
-      '/api': 'http://localhost:3000',
-    },
-  },
+  // devServer: {
+  //   contentBase: path.resolve(__dirname, 'client'),
+  //   historyApiFallback: true,
+  // },
   entry: './client/index.js',
   output: {
     publicPath: '/',
