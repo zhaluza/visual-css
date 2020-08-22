@@ -110,25 +110,45 @@ const SliderContainer = (props) => {
       </div>
       {showShadowColorPicker ? (
         <Fragment>
-          <SketchPicker color={shadowColor} onChange={(color) => handleBoxShadowColor(color.rgb)} />
+          <SketchPicker
+            className="color-picker"
+            color={shadowColor}
+            onChange={(color) => handleBoxShadowColor(color.rgb)}
+          />
           <button className="btn btn-2" onClick={() => setShowShadowColorPicker(false)}>
             Close shadow color picker
           </button>
         </Fragment>
       ) : (
-        <button className="btn btn-2" onClick={() => setShowShadowColorPicker(true)}>
+        <button
+          className="btn btn-2"
+          onClick={() => {
+            setShowShadowColorPicker(true);
+            setShowBoxColorPicker(false);
+          }}
+        >
           Change box shadow color
         </button>
       )}
       {showBoxColorPicker ? (
         <Fragment>
-          <SketchPicker color={boxColor} onChange={(color) => handleBoxColor(color.rgb)} />
+          <SketchPicker
+            className="color-picker"
+            color={boxColor}
+            onChange={(color) => handleBoxColor(color.rgb)}
+          />
           <button className="btn btn-2" onClick={() => setShowBoxColorPicker(false)}>
             Close box color picker
           </button>
         </Fragment>
       ) : (
-        <button className="btn btn-2" onClick={() => setShowBoxColorPicker(true)}>
+        <button
+          className="btn btn-2"
+          onClick={() => {
+            setShowBoxColorPicker(true);
+            setShowShadowColorPicker(false);
+          }}
+        >
           Change box color
         </button>
       )}
