@@ -32,3 +32,11 @@
 .copy-btn {
   width: 80%;
 }
+
+.cancel-btn {
+  background-color: $alert-color;
+  &:hover {
+    background-color: #fff;
+    color: $alert-color;
+  }
+}
