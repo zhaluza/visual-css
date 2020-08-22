@@ -51,6 +51,7 @@ body {
 }
 
 .slider-container {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -60,6 +61,23 @@ body {
   padding: 1rem;
   border-radius: $border-radius;
   box-shadow: $box-shadow;
+
+  .color-picker-container {
+    position: absolute;
+    z-index: 1;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7);
+    border-radius: $border-radius;
+    top: 20;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    button {
+      width: 90%;
+    }
+  }
 }
 
 // CSS Shapes
