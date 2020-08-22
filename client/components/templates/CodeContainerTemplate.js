@@ -6,8 +6,6 @@ const CodeContainerTemplate = (props) => {
   const textAreaRef = useRef(null);
 
   function copyCodeToClipBoard(e) {
-    console.log('copying');
-    console.log(e);
     textAreaRef.current.select();
     document.execCommand('copy');
     e.target.focus();

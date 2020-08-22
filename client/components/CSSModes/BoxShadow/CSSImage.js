@@ -3,7 +3,6 @@ import CSSImageTemplate from '../../templates/CSSImageTemplate';
 
 const CSSImage = (props) => {
   const { posX, posY, spread, blur, inset, boxColor, shadowColor } = props;
-  console.log(boxColor);
 
   const squareStyle = {
     boxShadow: `${inset ? 'inset' : ''} ${posX}px ${posY}px ${blur}px ${spread}px rgba(${
