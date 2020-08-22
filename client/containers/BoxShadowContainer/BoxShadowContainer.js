@@ -12,7 +12,8 @@ const mapStateToProps = (state) => ({
   blur: state.boxShadow.blur,
   opacity: state.boxShadow.opacity,
   inset: state.boxShadow.inset,
-  boxColor: state.boxColor.backgroundColor,
+  shadowColor: state.boxShadow.color,
+  boxColor: state.boxColor.boxColor,
 });
 
 const mapDispatchToProps = (dispatch) => ({
@@ -24,6 +25,7 @@ const mapDispatchToProps = (dispatch) => ({
   toggleInset: (event) => dispatch(actions.toggleInsetBoxShadow(event.target.checked)),
   handleReset: () => dispatch(actions.handleResetBoxShadow()),
   handleBoxColor: (color) => dispatch(actions.handleBoxColor(color)),
+  handleBoxShadowColor: (color) => dispatch(actions.handleBoxShadowColor(color)),
   resetBoxColor: () => dispatch(actions.resetBoxColor()),
 });
 
@@ -38,6 +40,7 @@ const BoxShadowContainer = (props) => {
         opacity={props.opacity}
         inset={props.inset}
         boxColor={props.boxColor}
+        shadowColor={props.shadowColor}
       />
       <div className="container-bottom">
         <SliderContainer
@@ -55,16 +58,18 @@ const BoxShadowContainer = (props) => {
           opacity={props.opacity}
           inset={props.inset}
           boxColor={props.boxColor}
+          shadowColor={props.shadowColor}
           handleBoxColor={props.handleBoxColor}
           resetBoxColor={props.resetBoxColor}
+          handleBoxShadowColor={props.handleBoxShadowColor}
         />
         <CodeContainer
           posX={props.posX}
           posY={props.posY}
           spread={props.spread}
           blur={props.blur}
-          opacity={props.opacity}
           inset={props.inset}
+          shadowColor={props.shadowColor}
         />
       </div>
     </div>
