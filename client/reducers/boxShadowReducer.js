@@ -5,7 +5,7 @@ const initialState = {
   posY: 5,
   spread: 5,
   blur: 5,
-  opacity: 0.2,
+  color: { r: 0, g: 0, b: 0, a: 0.2 },
   inset: false,
 };
 
@@ -40,7 +40,7 @@ const boxShadowReducer = (state = initialState, action) => {
       const opacity = action.payload / 100;
       return {
         ...state,
-        opacity,
+        color: { ...state.color, a: opacity },
       };
     case types.TOGGLE_INSET_BOX_SHADOW:
       const inset = action.payload;
@@ -48,6 +48,12 @@ const boxShadowReducer = (state = initialState, action) => {
       return {
         ...state,
         inset,
+      };
+    case types.HANDLE_BOX_SHADOW_COLOR:
+      const color = action.payload;
+      return {
+        ...state,
+        color,
       };
     case types.HANDLE_RESET_BOX_SHADOW:
       return {
