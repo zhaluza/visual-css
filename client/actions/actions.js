@@ -58,6 +58,11 @@ export const handleResetBoxShadow = () => ({
   type: types.HANDLE_RESET_BOX_SHADOW,
 });
 
+export const handleBoxShadowColor = (color) => ({
+  type: types.HANDLE_BOX_SHADOW_COLOR,
+  payload: color,
+});
+
 // Border Radius Actions
 export const handlePixelsBorderRadius = (event) => ({
   type: types.HANDLE_PIXELS_BORDER_RADIUS,
