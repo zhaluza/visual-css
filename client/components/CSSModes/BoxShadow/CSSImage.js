@@ -2,17 +2,17 @@ import React from 'react';
 import CSSImageTemplate from '../../templates/CSSImageTemplate';
 
 const CSSImage = (props) => {
-  const { posX, posY, spread, blur, inset, opacity, boxColor } = props;
+  const { posX, posY, spread, blur, inset, boxColor, shadowColor } = props;
+  console.log(boxColor);
 
   const squareStyle = {
-    boxShadow: `${posX}px ${posY}px ${blur}px ${spread}px rgba(0, 0, 0, ${opacity})`,
-    backgroundColor: `${boxColor}`,
+    boxShadow: `${inset ? 'inset' : ''} ${posX}px ${posY}px ${blur}px ${spread}px rgba(${
+      shadowColor.r
+    }, ${shadowColor.g}, ${shadowColor.b}, ${shadowColor.a})`,
+    backgroundColor: `rgba(${boxColor.r}, ${boxColor.g}, ${boxColor.b}, ${boxColor.a})`,
   };
 
-  const squareStyleInset = {
-    boxShadow: `inset ${posX}px ${posY}px ${blur}px ${spread}px rgba(0, 0, 0, ${opacity})`,
-  };
-  return <CSSImageTemplate styleProps={inset ? squareStyleInset : squareStyle} />;
+  return <CSSImageTemplate styleProps={squareStyle} />;
 };
 
 export default CSSImage;
