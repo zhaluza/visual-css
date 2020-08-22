@@ -2,8 +2,6 @@ import React, { useState, Fragment } from 'react';
 import { SketchPicker } from 'react-color';
 import SliderContainerTemplate from '../../templates/SliderContainerTemplate';
 
-// TODO: add color picking option for shadow
-
 const SliderContainer = (props) => {
   const { posX, posY, spread, blur, inset, boxColor, shadowColor } = props;
   const {
