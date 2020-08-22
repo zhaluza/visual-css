@@ -5,7 +5,7 @@ import SliderContainerTemplate from '../../templates/SliderContainerTemplate';
 // TODO: add color picking option for shadow
 
 const SliderContainer = (props) => {
-  const { posX, posY, spread, blur, opacity, inset, boxColor } = props;
+  const { posX, posY, spread, blur, inset, boxColor, shadowColor } = props;
   const {
     handleXPosition,
     handleYPosition,
@@ -16,9 +16,12 @@ const SliderContainer = (props) => {
     toggleInset,
     handleBoxColor,
     resetBoxColor,
+    handleBoxShadowColor,
   } = props;
+  const opacity = shadowColor.a;
 
-  const [displayPicker, setDisplayPicker] = useState(false);
+  const [showBoxColorPicker, setShowBoxColorPicker] = useState(false);
+  const [showShadowColorPicker, setShowShadowColorPicker] = useState(false);
 
   const toggleDivStyling = {
     display: 'flex',
@@ -91,7 +94,14 @@ const SliderContainer = (props) => {
           min="0"
           max="100"
           value={opacity * 100}
-          onChange={handleOpacity}
+          onChange={(e) =>
+            handleBoxShadowColor({
+              r: shadowColor.r,
+              g: shadowColor.g,
+              b: shadowColor.b,
+              a: e.target.value / 100,
+            })
+          }
           className="slider"
         />
       </div>
@@ -100,15 +110,27 @@ const SliderContainer = (props) => {
         <label>Toggle Inset</label>
         <input type="checkbox" onChange={toggleInset} checked={inset} style={toggleInsetSpacing} />
       </div>
-      {displayPicker ? (
+      {showShadowColorPicker ? (
         <Fragment>
-          <SketchPicker color={boxColor} onChange={(color) => handleBoxColor(color.hex)} />
-          <button className="btn btn-2" onClick={() => setDisplayPicker(false)}>
-            Close color picker
+          <SketchPicker color={shadowColor} onChange={(color) => handleBoxShadowColor(color.rgb)} />
+          <button className="btn btn-2" onClick={() => setShowShadowColorPicker(false)}>
+            Close shadow color picker
           </button>
         </Fragment>
       ) : (
-        <button className="btn btn-2" onClick={() => setDisplayPicker(true)}>
+        <button className="btn btn-2" onClick={() => setShowShadowColorPicker(true)}>
+          Change box shadow color
+        </button>
+      )}
+      {showBoxColorPicker ? (
+        <Fragment>
+          <SketchPicker color={boxColor} onChange={(color) => handleBoxColor(color.rgb)} />
+          <button className="btn btn-2" onClick={() => setShowBoxColorPicker(false)}>
+            Close box color picker
+          </button>
+        </Fragment>
+      ) : (
+        <button className="btn btn-2" onClick={() => setShowBoxColorPicker(true)}>
           Change box color
         </button>
       )}
