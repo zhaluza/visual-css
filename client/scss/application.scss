@@ -78,6 +78,32 @@ body {
       width: 90%;
     }
   }
+  .toggle-container {
+    width: 100px;
+    padding: 2px;
+    height: 2.5rem;
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: $dark;
+    border-radius: $border-radius;
+    cursor: pointer;
+
+    .toggle-btn {
+      background-color: $accent;
+      border-radius: $border-radius;
+      border: none;
+      position: absolute;
+      left: 40px;
+      color: white;
+      font-size: 1rem;
+      padding: 0.5rem;
+      transition: left 0.2s ease-out;
+    }
+    .toggle-left {
+      left: 2px;
+    }
+  }
 }
 
 // CSS Shapes
