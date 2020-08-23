@@ -2,8 +2,15 @@ import React, { useState } from 'react';
 import SliderContainerTemplate from '../../templates/SliderContainerTemplate';
 
 const SliderContainer = (props) => {
-  const { pixels, percent, handlePixels, handlePercents, handleReset } = props;
-  const [togglePixels, setTogglePixels] = useState(true);
+  const {
+    pixels,
+    percent,
+    handlePixels,
+    handlePercents,
+    handleReset,
+    togglePixels,
+    setTogglePixels,
+  } = props;
 
   return (
     <SliderContainerTemplate handleReset={handleReset}>
@@ -25,14 +32,20 @@ const SliderContainer = (props) => {
           <input
             type="range"
             min="0"
-            max="100"
+            max="50"
             value={percent}
             onChange={handlePercents}
             className="slider"
           />
         </div>
       )}
-      <div className="toggle-container" onClick={() => setTogglePixels((prevState) => !prevState)}>
+      <div
+        className="toggle-container"
+        onClick={() => {
+          setTogglePixels((prevState) => !prevState);
+          handleReset();
+        }}
+      >
         <button className={`toggle-btn ${togglePixels ? '' : 'toggle-left'}`}>
           {togglePixels ? 'Pixels' : 'Percent'}
         </button>
