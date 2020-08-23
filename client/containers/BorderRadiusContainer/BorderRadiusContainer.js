@@ -1,11 +1,9 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { connect } from 'react-redux';
 import * as actions from '../../actions/actions';
 import CodeContainer from '../../components/CSSModes/BorderRadius/CodeContainer';
 import CSSImage from '../../components/CSSModes/BorderRadius/CSSImage';
 import SliderContainer from '../../components/CSSModes/BorderRadius/SliderContainer';
-
-// TODO: implement this for percentages too
 
 const mapStateToProps = (state) => ({
   pixels: state.borderRadius.pixels,
@@ -19,9 +17,10 @@ const mapDispatchToProps = (dispatch) => ({
 });
 
 const BorderRadiusContainer = ({ pixels, percent, handlePixels, handlePercents, handleReset }) => {
+  const [togglePixels, setTogglePixels] = useState(true);
   return (
     <div className="css-mode-container">
-      <CSSImage pixels={pixels} percent={percent} />
+      <CSSImage pixels={pixels} percent={percent} togglePixels={togglePixels} />
       <div className="container-bottom">
         <SliderContainer
           pixels={pixels}
@@ -29,8 +28,10 @@ const BorderRadiusContainer = ({ pixels, percent, handlePixels, handlePercents, 
           handlePixels={handlePixels}
           handlePercents={handlePercents}
           handleReset={handleReset}
+          togglePixels={togglePixels}
+          setTogglePixels={setTogglePixels}
         />
-        <CodeContainer pixels={pixels} percent={percent} />
+        <CodeContainer pixels={pixels} percent={percent} togglePixels={togglePixels} />
       </div>
     </div>
   );
