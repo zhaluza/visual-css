@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Fragment } from 'react';
 import { connect } from 'react-redux';
 import * as actions from './actions/actions';
 
@@ -7,6 +7,7 @@ import Sidebar from './components/Sidebar';
 import BoxShadowContainer from './containers/BoxShadowContainer';
 import BorderRadiusContainer from './containers/BorderRadiusContainer';
 import Rotate3DContainer from './containers/Rotate3DContainer';
+import Spinner from './components/Spinner';
 
 const mapStateToProps = (state) => ({
   mode: state.mode.mode,
@@ -23,6 +24,7 @@ const App = (props) => {
   // mobile settings are active by default
   const [isMobile, setIsMobile] = useState(true);
   const [menuOpen, setMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
 
   const toggleMenu = () => {
     setMenuOpen((prevState) => !prevState);
@@ -41,24 +43,31 @@ const App = (props) => {
       setIsMobile(false);
       setMenuOpen(true);
     }
+    setIsLoading(false);
   }, []);
 
   return (
     <div className="app">
-      {isMobile && <Burger menuOpen={menuOpen} toggleMenu={toggleMenu} />}
-      <Sidebar
-        isMobile={isMobile}
-        menuOpen={menuOpen}
-        mode={props.mode}
-        setBoxShadowMode={props.setBoxShadowMode}
-        setBorderRadiusMode={props.setBorderRadiusMode}
-        setRotate3DMode={props.setRotate3DMode}
-      />
-      <div className="content-container" onClick={() => closeNav()}>
-        {props.mode === 'box-shadow' && <BoxShadowContainer />}
-        {props.mode === 'border-radius' && <BorderRadiusContainer />}
-        {props.mode === 'rotate-3d' && <Rotate3DContainer />}
-      </div>
+      {isLoading ? (
+        <Spinner />
+      ) : (
+        <Fragment>
+          {isMobile && <Burger menuOpen={menuOpen} toggleMenu={toggleMenu} />}
+          <Sidebar
+            isMobile={isMobile}
+            menuOpen={menuOpen}
+            mode={props.mode}
+            setBoxShadowMode={props.setBoxShadowMode}
+            setBorderRadiusMode={props.setBorderRadiusMode}
+            setRotate3DMode={props.setRotate3DMode}
+          />
+          <div className="content-container" onClick={() => closeNav()}>
+            {props.mode === 'box-shadow' && <BoxShadowContainer />}
+            {props.mode === 'border-radius' && <BorderRadiusContainer />}
+            {props.mode === 'rotate-3d' && <Rotate3DContainer />}
+          </div>
+        </Fragment>
+      )}
     </div>
   );
 };
